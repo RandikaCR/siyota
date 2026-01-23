@@ -1,0 +1,20 @@
+<script src="{{ asset('assets/frontend/vendors/jquery/3.6.0/jquery.min.js') }}"></script>
+
+
+
+<script src="{{ asset('assets/frontend/vendors/bootstrap/js/bootstrap.bundle.js') }}"></script>
+<script src="{{ asset('assets/frontend/vendors/clipboard/clipboard.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/vendors/vanilla-lazyload/lazyload.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/vendors/waypoints/jquery.waypoints.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/vendors/lightgallery/lightgallery.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/vendors/lightgallery/plugins/zoom/lg-zoom.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/vendors/lightgallery/plugins/thumbnail/lg-thumbnail.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/vendors/lightgallery/plugins/video/lg-video.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/vendors/lightgallery/plugins/vimeoThumbnail/lg-vimeo-thumbnail.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/vendors/isotope/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/vendors/slick/slick.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/vendors/gsap/gsap.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/vendors/gsap/ScrollToPlugin.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/vendors/gsap/ScrollTrigger.min.js') }}"></script>
+<script src="{{ asset('assets/frontend/vendors/mapbox-gl/mapbox-gl.js') }}"></script>
+<script src="{{ asset('assets/frontend/js/theme.min.js') }}"></script>
