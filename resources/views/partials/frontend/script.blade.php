@@ -18,3 +18,7 @@
 <script src="{{ asset('assets/frontend/vendors/gsap/ScrollTrigger.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/vendors/mapbox-gl/mapbox-gl.js') }}"></script>
 <script src="{{ asset('assets/frontend/js/theme.min.js') }}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/lightgallery.min.js" integrity="sha512-n02TbYimj64qb98ed5WwkNiSw/i9Xlvv4Ehvhg0jLp3qMAMWCYUHbOMbppZ0vimtyiyw9NqNqxUZC4hq86f4aQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+@yield('script')

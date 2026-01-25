@@ -3640,7 +3640,7 @@ progress {
   font-weight: 500;
   line-height: 1.625;
   color: var(--bs-body-color);
-  background-color: var(--bs-form-control-bg);
+  background-color: #E7E7E7;
   background-clip: padding-box;
   border: var(--bs-border-width) solid var(--bs-border-color);
   appearance: none;
@@ -29285,7 +29285,7 @@ svg.icon {
 }
 
 .btn-hover-bg-primary {
-  --bs-btn-hover-bg: #4e7661;
+  --bs-btn-hover-bg: #e22430;
 }
 
 .btn-hover-text-primary {
@@ -29293,7 +29293,7 @@ svg.icon {
 }
 
 .btn-hover-border-primary {
-  --bs-btn-hover-border-color: #4e7661;
+  --bs-btn-hover-border-color: #e22430;
 }
 
 .btn-hover-bg-secondary {
@@ -32544,12 +32544,12 @@ ul.single-product-meta li span:first-child {
 }
 
 [data-bs-theme="dark"] .btn-dark {
-  --bs-btn-bg: var(--bs-primary);
-  --bs-btn-border-color: var(--bs-primary);
-  --bs-btn-hover-bg: var(--bs-primary-border-subtle);
-  --bs-btn-hover-border-color: var(--bs-primary-border-subtle);
-  --bs-btn-active-bg: var(--bs-primary-border-subtle);
-  --bs-btn-active-border-color: var(--bs-primary-border-subtle);
+  --bs-btn-bg: #8c338c;
+  --bs-btn-border-color: #8c338c;
+  --bs-btn-hover-bg: #e22430;
+  --bs-btn-hover-border-color: #e22430;
+  --bs-btn-active-bg: #e22430;
+  --bs-btn-active-border-color: #e22430;
 }
 
 @media (min-width: 1200px) {

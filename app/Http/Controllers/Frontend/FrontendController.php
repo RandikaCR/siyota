@@ -15,12 +15,22 @@ class FrontendController extends Controller
 
     public function aboutUs(Request $request)
     {
-        return view('frontend.index');
+        return view('frontend.about-us');
     }
 
     public function contactUs(Request $request)
     {
-        return view('frontend.index');
+        return view('frontend.contact-us');
+    }
+
+    public function services(Request $request)
+    {
+        return view('frontend.services');
+    }
+
+    public function gallery(Request $request)
+    {
+        return view('frontend.gallery');
     }
 
 

@@ -22,10 +22,10 @@
 
                 <div class="d-none d-xl-flex justify-content-end">
                     <ul class="navbar-nav">
-                        <li class="nav-item active transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10">
+                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 {{ (request()->segment(1) == '') ? 'active' : '' }}">
                             <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px" href="{{ url('/') }}">Home</a>
                         </li>
-                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 dropdown dropdown-hover dropdown-fullwidth">
+                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 dropdown dropdown-hover dropdown-fullwidth {{ (request()->segment(1) == 'products' || request()->segment(1) == 'product') ? 'active' : '' }}">
                             <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px dropdown-toggle" href="{{ url('/products') }}" data-bs-toggle="dropdown" id="menu-item-products" aria-haspopup="true" aria-expanded="false">Products</a><div class="dropdown-menu mega-menu start-0 py-6 " aria-labelledby="menu-item-products">
                                 <div class="megamenu-products container py-8 px-12">
                                     <div class="row">
@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 dropdown dropdown-hover dropdown-fullwidth">
+                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 dropdown dropdown-hover dropdown-fullwidth {{ (request()->segment(1) == 'landscapes') ? 'active' : '' }}">
                             <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px dropdown-toggle" href="{{ url('/landscapes') }}" data-bs-toggle="dropdown" id="menu-item-landscapes" aria-haspopup="true" aria-expanded="false">Landscapes</a><div class="dropdown-menu mega-menu start-0 py-6 " aria-labelledby="menu-item-landscapes">
                                 <div class="megamenu-landscapes container py-8 px-12">
                                     <div class="row">
@@ -61,16 +61,16 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10">
+                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 {{ (request()->segment(1) == 'services') ? 'active' : '' }}">
                             <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px" href="{{ url('/services') }}">Our Services</a>
                         </li>
-                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10">
+                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 {{ (request()->segment(1) == 'gallery') ? 'active' : '' }}">
                             <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px" href="{{ url('/gallery') }}">Gallery</a>
                         </li>
-                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10">
+                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 {{ (request()->segment(1) == 'about-us') ? 'active' : '' }}">
                             <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px" href="{{ url('/about-us') }}">About Us</a>
                         </li>
-                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10">
+                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 {{ (request()->segment(1) == 'contact-us') ? 'active' : '' }}">
                             <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px" href="{{ url('/contact-us') }}">Contact Us</a>
                         </li>
 
