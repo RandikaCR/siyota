@@ -8,15 +8,6 @@
         <hr class="mt-0">
         <div class="offcanvas-body pt-0 mb-2">
             <ul class="navbar-nav">
-
-
-
-
-
-
-
-
-
                 <li class="nav-item transition-all-xl-1 py-0 dropdown dropdown-fullwidth">
                     <a class="nav-link d-flex justify-content-between position-relative text-uppercase fw-semibold ls-1 fs-15px dropdown-toggle"
                        href="index-2.html" data-bs-toggle="dropdown" id="menu-item-home-canvas" aria-haspopup="true" aria-expanded="false">Home</a><div class="dropdown-menu mega-menu start-0 py-6 "
@@ -121,22 +112,6 @@
                                         </li><li>
                                             <a href="user-login.html" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Login</span></a>
                                         </li></ul>
-                                </div><div class="col d-xxl-block d-none megamenu-shop-banner" data-bs-theme="light">
-                                    <div class="card border-0 mt-4">
-                                        <img src="assets/images/background/bg-mega-menu-shop.jpg" alt="bg mega menu" class="card-img">
-                                        <div class="card-img-overlay d-flex flex-column mx-2 px-9 py-6">
-                                            <p class="text-body-emphasis ls-1 fw-semibold mb-4 mt-6 text-uppercase">
-                                                new collection
-                                            </p>
-                                            <h3 class="fs-3">
-                                                Special <br>
-                                                Offer
-                                            </h3>
-                                            <div class="mt-auto">
-                                                <a href="#" class="btn btn-white">Shop Sale</a>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

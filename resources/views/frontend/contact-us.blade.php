@@ -27,11 +27,8 @@
         <div class="container container-xxl py-lg-17 pt-14 pb-16">
             <div class="row">
                 <div class="col-sm-8">
-                    <div id="map" class="mapbox-gl map-point-animate map-box-has-effect "
-                         style="height:530px"
-                         data-mapbox-access-token="pk.eyJ1IjoiZzVvbmxpbmUiLCJhIjoiY2t1bWY4NzBiMWNycDMzbzZwMnI5ZThpaiJ9.ZifefVtp4anluFUbAMxAXg"
-                         data-mapbox-options='{&#34;center&#34;:[-106.53671888774004,35.12362056187368],&#34;setLngLat&#34;:[-106.53671888774004,35.12362056187368],&#34;style&#34;:&#34;mapbox://styles/mapbox/light-v10&#34;,&#34;zoom&#34;:5}'
-                         data-mapbox-marker='[{&#34;backgroundImage&#34;:&#34;/assets/images/others/marker.png&#34;,&#34;backgroundRepeat&#34;:&#34;no-repeat&#34;,&#34;className&#34;:&#34;marker&#34;,&#34;height&#34;:&#34;70px&#34;,&#34;position&#34;:[-102.53671888774004,38.12362056187368],&#34;width&#34;:&#34;70px&#34;},{&#34;backgroundImage&#34;:&#34;/assets/images/others/marker.png&#34;,&#34;backgroundRepeat&#34;:&#34;no-repeat&#34;,&#34;className&#34;:&#34;marker&#34;,&#34;height&#34;:&#34;70px&#34;,&#34;position&#34;:[-109.03671888774004,33.02362056187368],&#34;width&#34;:&#34;70px&#34;}]'>
+                    <div id="map" class="mapbox-gl map-point-animate map-box-has-effect" style="height:530px">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.3895144888716!2d80.55454697582458!3d6.598418622286493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3ed945d837d39%3A0x5e0c03aaa727ac65!2sSiyota%20(pvt)ltd!5e0!3m2!1sen!2slk!4v1769670112318!5m2!1sen!2slk" width="100%" class="theme-border-radius" height="530px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 
                     <div class="container py-17">
@@ -41,20 +38,20 @@
                                 <form class="contact-form" method="post" action="#">
                                     <div class="row mb-8 mb-md-10">
                                         <div class="col-12 mb-8">
-                                            <input type="text" class="form-control input-focus" placeholder="Your Name">
+                                            <input type="text" class="form-control input-focus" placeholder="Your Name" id="name">
                                         </div>
                                         <div class="col-md-6 col-12 mb-8">
-                                            <input type="text" class="form-control input-focus" placeholder="Phone Number">
+                                            <input type="text" class="form-control input-focus" placeholder="Phone Number" id="phone">
                                         </div>
                                         <div class="col-md-6 col-12 mb-8">
-                                            <input type="email" class="form-control input-focus" placeholder="Email Address">
+                                            <input type="email" class="form-control input-focus" placeholder="Email Address" id="email">
                                         </div>
                                         <div class="col-12">
-                                            <input type="text" class="form-control input-focus" placeholder="Subject">
+                                            <input type="text" class="form-control input-focus" placeholder="Subject" id="subject">
                                         </div>
                                     </div>
-                                    <textarea class="form-control mb-6 input-focus" placeholder="Messenger" rows="7"></textarea>
-                                    <button type="submit" class=" btn btn-dark text-uppercase btn-hover-bg-primary btn-hover-border-primary px-11">Submit</button>
+                                    <textarea class="form-control mb-6 input-focus" placeholder="Message" id="message" rows="7"></textarea>
+                                    <a href="javascript:void(0);" class=" btn btn-dark text-uppercase btn-hover-bg-primary btn-hover-border-primary px-11 send-message">Submit Message</a>
                                 </form>
 
                             </div>
@@ -75,7 +72,6 @@
                     </div>
                     <div class="mt-20">
                         <h2 class="mb-5 fs-3 new-theme-purple font-bebas">Our Partners</h2>
-
                     </div>
                 </div>
             </div>
@@ -83,4 +79,113 @@
         </div>
     </section>
 
+@endsection
+@section('script')
+    <script>
+
+        function validateEmail($email) {
+            // Regular expression for email validation
+            var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            // Return true if email matches regex, false otherwise
+            return regex.test($email);
+        }
+
+        $(document).ready(function (){
+            $('.send-message').on('click', function ($e){
+                $e.preventDefault();
+
+                $name = $('#name').val().trim();
+                $phone = $('#phone').val().trim();
+                $email = $('#email').val().trim();
+                $subject = $('#subject').val().trim();
+                $message = $('#message').val().trim();
+
+                $isInvalid = 0;
+
+                if($name == ''){
+                    $isInvalid++;
+                    Swal.fire('Unable to send...', 'Name is required!', 'error');
+                }else if($phone == ''){
+                    $isInvalid++;
+                    Swal.fire('Unable to send...', 'Phone number is required!', 'error');
+                }else if($email == ''){
+                    $isInvalid++;
+                    Swal.fire('Unable to send...', 'Email is required!', 'error');
+                }else if(!validateEmail($email)){
+                    $isInvalid++;
+                    Swal.fire('Unable to send...', 'Invalid Email address!', 'error');
+                }else if($subject == ''){
+                    $isInvalid++;
+                    Swal.fire('Unable to send...', 'Subject is required!', 'error');
+                }else if($message == ''){
+                    $isInvalid++;
+                    Swal.fire('Unable to send...', 'Message is required!', 'error');
+                }
+
+                if($isInvalid == 0){
+                    Swal.fire({
+                        title: "Are you sure?",
+                        text: "You want to send this message!",
+                        icon: "warning",
+                        showCancelButton: !0,
+                        showLoaderOnConfirm: true,
+                        confirmButtonText: "Yes, Send it!",
+                        cancelButtonText: "No, cancel!",
+                        confirmButtonClass: "btn new-theme-purple-bg new-theme-light font-bebas w-xs me-2 mt-2",
+                        cancelButtonClass: "btn btn-secondary font-bebas new-theme-secondary w-xs mt-2",
+                        buttonsStyling: !1,
+                        showCloseButton: !0,
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+
+                            setTimeout(function() {
+                                $.ajax({
+                                    url: "{{ route('frontend.contacts.sendMessage') }}",
+                                    type: 'POST',
+                                    data: {
+                                        name: $name,
+                                        phone: $phone,
+                                        email: $email,
+                                        subject: $subject,
+                                        message: $message,
+                                        _token: csrf_token()
+                                    },
+                                    dataType: 'json',
+                                    beforeSend: function ($jqXHR, $obj) {
+                                        Swal.fire({
+                                            title: "Processing...",
+                                            text: "Please wait",
+                                            imageUrl: "{{ asset('assets/common/images/ajax-loader.gif') }}",
+                                            showConfirmButton: false,
+                                            allowOutsideClick: false
+                                        });
+                                    },
+                                    success: function ($response, $textStatus, $jqXHR) {
+                                        Swal.fire('Thank You!', 'Message has been sent successfully!. You will be contacted as soon as possible', 'success');
+
+                                        $('#name').val('');
+                                        $('#phone').val('');
+                                        $('#email').val('');
+                                        $('#subject').val('');
+                                        $('#message').val('');
+
+                                        setTimeout(function(){
+                                            location.reload();
+                                        },2000);
+                                    },
+                                    error: function ($jqXHR, $textStatus, $errorThrown) {
+                                        Swal.fire('Oops...', 'Something went wrong with the System!', 'error');
+                                    }
+                                });
+
+                            }, 50);
+                        }
+                    });
+                }
+
+
+            });
+        });
+
+    </script>
 @endsection

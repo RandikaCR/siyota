@@ -114,7 +114,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12 mt-5 mb-40" data-animate="fadeInUp">
-                            <img class="img-fluid" src="{{ asset('assets/common/images/uploads/about-team.jpg') }}">
+                            <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/about-team.jpg') }}">
                         </div>
                     </div>
                 </div>

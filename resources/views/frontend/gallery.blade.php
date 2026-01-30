@@ -45,47 +45,47 @@
             <div class="row justify-content-around" id="image-carousel">
                 <div class="col-sm-4 pb-3 cursor-pointer" data-src="{{ asset('assets/common/images/uploads/gallery-1.jpg') }}">
                     <div class="mb-13 pb-3 text-center" data-animate="fadeInUp">
-                        <img class="img-fluid" src="{{ asset('assets/common/images/uploads/gallery-1.jpg') }}">
+                        <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/gallery-1.jpg') }}">
                     </div>
                 </div>
                 <div class="col-sm-4 pb-3 cursor-pointer" data-src="{{ asset('assets/common/images/uploads/gallery-2.jpg') }}">
                     <div class="mb-13 pb-3 text-center" data-animate="fadeInUp">
-                        <img class="img-fluid" src="{{ asset('assets/common/images/uploads/gallery-2.jpg') }}">
+                        <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/gallery-2.jpg') }}">
                     </div>
                 </div>
                 <div class="col-sm-4 pb-3 cursor-pointer" data-src="{{ asset('assets/common/images/uploads/gallery-3.jpg') }}">
                     <div class="mb-13 pb-3 text-center" data-animate="fadeInUp">
-                        <img class="img-fluid" src="{{ asset('assets/common/images/uploads/gallery-3.jpg') }}">
+                        <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/gallery-3.jpg') }}">
                     </div>
                 </div>
                 <div class="col-sm-4 pb-3 cursor-pointer" data-src="{{ asset('assets/common/images/uploads/gallery-4.jpg') }}">
                     <div class="mb-13 pb-3 text-center" data-animate="fadeInUp">
-                        <img class="img-fluid" src="{{ asset('assets/common/images/uploads/gallery-4.jpg') }}">
+                        <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/gallery-4.jpg') }}">
                     </div>
                 </div>
                 <div class="col-sm-4 pb-3 cursor-pointer" data-src="{{ asset('assets/common/images/uploads/gallery-5.jpg') }}">
                     <div class="mb-13 pb-3 text-center" data-animate="fadeInUp">
-                        <img class="img-fluid" src="{{ asset('assets/common/images/uploads/gallery-5.jpg') }}">
+                        <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/gallery-5.jpg') }}">
                     </div>
                 </div>
                 <div class="col-sm-4 pb-3 cursor-pointer" data-src="{{ asset('assets/common/images/uploads/gallery-6.jpg') }}">
                     <div class="mb-13 pb-3 text-center" data-animate="fadeInUp">
-                        <img class="img-fluid" src="{{ asset('assets/common/images/uploads/gallery-6.jpg') }}">
+                        <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/gallery-6.jpg') }}">
                     </div>
                 </div>
                 <div class="col-sm-4 pb-3 cursor-pointer" data-src="{{ asset('assets/common/images/uploads/gallery-7.jpg') }}">
                     <div class="mb-13 pb-3 text-center" data-animate="fadeInUp">
-                        <img class="img-fluid" src="{{ asset('assets/common/images/uploads/gallery-7.jpg') }}">
+                        <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/gallery-7.jpg') }}">
                     </div>
                 </div>
                 <div class="col-sm-4 pb-3 cursor-pointer" data-src="{{ asset('assets/common/images/uploads/gallery-8.jpg') }}">
                     <div class="mb-13 pb-3 text-center" data-animate="fadeInUp">
-                        <img class="img-fluid" src="{{ asset('assets/common/images/uploads/gallery-8.jpg') }}">
+                        <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/gallery-8.jpg') }}">
                     </div>
                 </div>
                 <div class="col-sm-4 pb-3 cursor-pointer" data-src="{{ asset('assets/common/images/uploads/gallery-9.jpg') }}">
                     <div class="mb-13 pb-3 text-center" data-animate="fadeInUp">
-                        <img class="img-fluid" src="{{ asset('assets/common/images/uploads/gallery-9.jpg') }}">
+                        <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/gallery-9.jpg') }}">
                     </div>
                 </div>
             </div>
