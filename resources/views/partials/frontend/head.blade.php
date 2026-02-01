@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>@yield('page_title') :: Siyota (Pvt) Ltd. Official Website</title>
-<link rel="icon" href="{{ asset('assets/frontend/images/others/favicon.ico') }}">
+<link rel="icon" href="{{ asset('assets/common/images/logo.png') }}">
 
 @php
     $metaTitle = !empty($metaTitle) ? $metaTitle : 'Siyota (Pvt) Ltd. Official Website';
