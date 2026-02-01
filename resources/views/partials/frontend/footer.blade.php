@@ -13,7 +13,7 @@
                         <a href="{{ url('/') }}" class="text-body">Home</a>
                     </li>
                     <li class="pt-3 mb-4">
-                        <a href="{{ url('/products') }}" class="text-body">Products</a>
+                        <a href="{{ url('/product-categories') }}" class="text-body">Products</a>
                     </li>
                     <li class="pt-3 mb-4">
                         <a href="{{ url('/landscapes') }}" class="text-body">Landscapes</a>

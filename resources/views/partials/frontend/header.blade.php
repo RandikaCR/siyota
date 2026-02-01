@@ -25,8 +25,8 @@
                         <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 {{ (request()->segment(1) == '') ? 'active' : '' }}">
                             <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px" href="{{ url('/') }}">Home</a>
                         </li>
-                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 dropdown dropdown-hover dropdown-fullwidth {{ (request()->segment(1) == 'products' || request()->segment(1) == 'product') ? 'active' : '' }}">
-                            <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px dropdown-toggle" href="{{ url('/products') }}" data-bs-toggle="dropdown" id="menu-item-products" aria-haspopup="true" aria-expanded="false">Products</a><div class="dropdown-menu mega-menu start-0 py-6 " aria-labelledby="menu-item-products">
+                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 dropdown dropdown-hover dropdown-fullwidth {{ (request()->segment(1) == 'product-categories' || request()->segment(1) == 'product') ? 'active' : '' }}">
+                            <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px dropdown-toggle" href="{{ url('/product-categories') }}" data-bs-toggle="dropdown" id="menu-item-products" aria-haspopup="true" aria-expanded="false">Products</a><div class="dropdown-menu mega-menu start-0 py-6 " aria-labelledby="menu-item-products">
                                 <div class="megamenu-products container py-8 px-12">
                                     <div class="row">
                                         <div class="col">
