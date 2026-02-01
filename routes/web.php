@@ -26,6 +26,7 @@ Route::group([ 'prefix' =>'/'], function () {
     Route::get('/product-categories', [FrontendProducts::class, 'index'])->name('frontend.products.index');
     Route::get('/product-categories/{slug}', [FrontendProducts::class, 'index'])->name('frontend.products.indexWithCategory');
     Route::get('/product/{slug}', [FrontendProducts::class, 'view'])->name('frontend.products.view');
+    Route::post('/product/get-pricing-details', [FrontendProducts::class, 'getPricingDetails'])->name('frontend.products.getPricingDetails');
 
     Route::post('/contact/send-message', [Frontend::class, 'sendMessage'])->name('frontend.contacts.sendMessage');
     Route::post('/app-logout', [Frontend::class, 'appLogout'])->name('frontend.auth.appLogout');

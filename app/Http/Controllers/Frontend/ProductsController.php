@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Labels;
 use App\Models\ProductCategories;
 use App\Models\ProductPrices;
 use App\Models\Products;
+use App\Models\Thicknesses;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -98,20 +100,54 @@ class ProductsController extends Controller
             ->take(6)
             ->get();
 
-        $product_prices = ProductPrices::select(
-            'product_prices.*',
-            'thicknesses.name AS thickness_name',
-            'labels.name AS label_name',
-        )
-            ->join('thicknesses', 'product_prices.thickness_id', 'thicknesses.id')
-            ->join('labels', 'product_prices.label_id', 'labels.id')
-            ->where('product_prices.product_id', $product->id)
+
+        $thicknesses = Thicknesses::select('thicknesses.*')
+            ->join('product_prices', 'thicknesses.id', 'product_prices.thickness_id')
+            ->where('thicknesses.status', 1)
+            ->groupBy('thicknesses.id')
+            ->get();
+
+        $labels = Labels::select('labels.*')
+            ->join('product_prices', 'labels.id', 'product_prices.label_id')
+            ->where('labels.status', 1)
+            ->groupBy('labels.id')
             ->get();
 
         return view('frontend.products.view', [
             'product' => $product,
             'related_products' => $releated,
-            'product_prices' => $product_prices,
+            'thicknesses' => $thicknesses,
+            'labels' => $labels,
+        ]);
+    }
+
+    public function getPricingDetails(Request $request){
+
+        $productId = !empty($request->product_id) ? $request->product_id : 0;
+        $thicknessId = !empty($request->thickness_id) ? $request->thickness_id : 0;
+        $labelId = !empty($request->label_id) ? $request->label_id : 0;
+
+        $getPrice = ProductPrices::where('product_id', $productId)
+            ->where('thickness_id', $thicknessId)
+            ->where('label_id', $labelId)
+            ->first();
+
+        $status = 'success';
+        $message = '';
+        if (empty($getPrice)){
+            $status = 'error';
+            $price = 0;
+            $message = 'No price available for this product selection';
+        }else{
+            $price = $getPrice->price;
+        }
+
+        $price = priceWithCurrency($price);
+
+        return response()->json([
+            'status' => $status,
+            'price' => $price,
+            'message' => $message,
         ]);
     }
 }

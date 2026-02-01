@@ -38,7 +38,7 @@
             </div>
             <div class="col-md-6 pt-md-0 pt-10">
                 <p class="d-flex align-items-center mb-6">
-                    <span class="fs-18px text-body-emphasis ps-6 fw-bold">{{ priceWithCurrency($product->default_price) }}</span>
+                    <span class="fs-18px text-body-emphasis ps-6 fw-bold" id="price-area">{{ priceWithCurrency($product->default_price) }}</span>
                 </p>
                 <h1 class="mb-4 pb-2 fs-4">{{ $product->product }}</h1>
 
@@ -47,24 +47,24 @@
                     <div class="row align-items-end">
                         <div class="col-sm-6 form-group">
                             <label class="text-body-emphasis fw-semibold py-5" for="size">Select a Thickness: </label>
-                            <select class="form-control w-100 product-info-2-quantity" id="get-thickness">
+                            <select class="form-control w-100 product-info-2-quantity" id="thickness_id">
                                 <option value="0">Default Thickness</option>
-                                @foreach($product_prices as $pp)
-                                    <option value="{{ $pp->thickness_id }}">{{ $pp->thickness_name }}</option>
+                                @foreach($thicknesses as $tk)
+                                    <option value="{{ $tk->id }}">{{ $tk->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="col-sm-6 form-group">
                             <label class="text-body-emphasis fw-semibold py-5" for="quantity">Select a Label: </label>
-                            <select class="form-control w-100 product-info-2-quantity" id="get-label">
+                            <select class="form-control w-100 product-info-2-quantity" id="label_id">
                                 <option value="0">Default Label</option>
-                                @foreach($product_prices as $pp)
-                                    <option value="{{ $pp->label_id }}">{{ $pp->label_name }}</option>
+                                @foreach($labels as $lb)
+                                    <option value="{{ $lb->id }}">{{ $lb->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="col-12">
-                            <a href="javascript:void(0);" class="btn btn-lg btn-dark btn-block mb-7 mt-8 w-100 btn-hover-bg-primary btn-hover-border-primary">
+                            <a href="javascript:void(0);" class="btn btn-lg btn-dark btn-block mb-7 mt-8 w-100 btn-hover-bg-primary btn-hover-border-primary get-price">
                                 Get Price
                             </a>
                         </div>
@@ -120,4 +120,53 @@
     <div class="border-top w-100 h-1px"></div>
     @endif
 
+    <input type="hidden" id="product_id" value="{{ $product->id }}">
+@endsection
+
+@section('script')
+    <script>
+
+        $(document).ready(function (){
+            $('.get-price').on('click', function ($e){
+                $e.preventDefault();
+
+                $productId = $('#product_id').val();
+                $thicknessId = $('#thickness_id').val();
+                $labelId = $('#label_id').val();
+
+                $.ajax({
+                    url: "{{ route('frontend.products.getPricingDetails') }}",
+                    type: 'POST',
+                    data: {
+                        product_id: $productId,
+                        thickness_id: $thicknessId,
+                        label_id: $labelId,
+                        _token: csrf_token()
+                    },
+                    dataType: 'json',
+                    beforeSend: function ($jqXHR, $obj) {
+                        $('#price-area').html('<i class="fa fa-spinner fa-spin" aria-hidden="true"></i>');
+                        $('.get-price').html('Getting Price <i class="fa fa-spinner fa-spin ms-2" aria-hidden="true"></i>');
+                    },
+                    success: function ($response, $textStatus, $jqXHR) {
+
+                        if($response.status == 'success'){
+                            $('#price-area').html($response.price);
+                        }else{
+                            $('#price-area').html('<span class="text-danger">'+$response.message+'</span>');
+                        }
+
+                        $('.get-price').html('Get Price');
+
+                    },
+                    error: function ($jqXHR, $textStatus, $errorThrown) {
+                        Swal.fire('Oops...', 'Something went wrong with the System!', 'error');
+                    }
+                });
+
+
+            });
+        });
+
+    </script>
 @endsection
