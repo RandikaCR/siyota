@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Labels;
 use App\Models\ProductCategories;
 use App\Models\ProductImages;
+use App\Models\ProductPrices;
 use App\Models\Products;
+use App\Models\Thicknesses;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -60,12 +63,18 @@ class ProductsController extends Controller
         $tempId = $product->id;
         $categories = ProductCategories::where('status', 1)->orderBy('display_order', 'ASC')->get();
         $images = ProductImages::where('product_id', $tempId)->get();
+        $thicknesses = Thicknesses::where('status', 1)->get();
+        $labels = Labels::where('status', 1)->get();
+        $productPrices = ProductPrices::where('product_id', $tempId)->get();
 
         return view('backend.products.create',[
             'temp_id' => $tempId,
             'product' => $product,
             'categories' => $categories,
             'images' => $images,
+            'thicknesses' => $thicknesses,
+            'labels' => $labels,
+            'product_prices' => $productPrices,
         ]);
     }
 
@@ -73,8 +82,10 @@ class ProductsController extends Controller
 
         $request->validate([
             'slug' => 'required',
+            'product_category_id' => 'required',
             'product' => 'required',
         ]);
+
 
         if(!empty($request->id)){
             $save = Products::find($request->id);
@@ -83,7 +94,7 @@ class ProductsController extends Controller
         }
         else{
 
-            $req = ['screen' => 'news', 'id' => ''];
+            $req = ['screen' => 'products', 'id' => ''];
             $uuId = $this->generateUUId($req);
 
             $save = new Products();
@@ -94,14 +105,57 @@ class ProductsController extends Controller
         }
 
         $save->slug = !empty($request->slug) ? $request->slug : null;
-        $save->news_category_id = !empty($request->news_category_id) ? $request->news_category_id : 0;
-        $save->en_title = !empty($request->en_title) ? $request->en_title : null;
-        $save->si_title = !empty($request->si_title) ? $request->si_title : null;
-        $save->ta_title = !empty($request->ta_title) ? $request->ta_title : null;
-        $save->en_content = !empty($request->en_content) ? $request->en_content : null;
-        $save->si_content = !empty($request->si_content) ? $request->si_content : null;
-        $save->ta_content = !empty($request->ta_content) ? $request->ta_content : null;
+        $save->product_category_id = !empty($request->product_category_id) ? $request->product_category_id : 0;
+        $save->product = !empty($request->product) ? $request->product : null;
+        $save->description = !empty($request->description) ? $request->description : null;
         $save->save();
+
+        $productId = $save->id;
+
+        //Insert/Update Prices
+        $priceCount = 0;
+        $availablePriceIds = [];
+        foreach($request->price as $price){
+            if (!empty($priceCount)){
+                $thicknessId = $request->product_thickness_id[$priceCount];
+                $labelId = $request->product_label_id[$priceCount];
+            }else{
+                $thicknessId = 0;
+                $labelId = 0;
+            }
+
+            $getDefaultPrice = ProductPrices::where('product_id', $productId)
+                ->where('thickness_id', $thicknessId)
+                ->where('label_id', $labelId)
+                ->first();
+
+            if (empty($getDefaultPrice)) {
+                $p = new ProductPrices();
+                $p->product_id = $productId;
+                $p->thickness_id = $thicknessId;
+                $p->label_id = $labelId;
+                $p->price = $price;
+                $p->status = 1;
+                $p->save();
+                $availablePriceIds[] = $p->id;
+            }else{
+                $getDefaultPrice->price = $price;
+                $getDefaultPrice->save();
+                $availablePriceIds[] = $getDefaultPrice->id;
+            }
+
+            $priceCount++;
+        }
+
+        //Delete Other Prices
+        $getDefaultPrices = ProductPrices::where('product_id', $productId)->get();
+        foreach($getDefaultPrices as $price){
+            if (!in_array($price->id, $availablePriceIds)) {
+                $p = ProductPrices::find($price->id);
+                $p->delete();
+            }
+        }
+
 
         if (!empty(session('temp_product_id'))){
             $sessionId = session('temp_product_id');
@@ -315,5 +369,19 @@ class ProductsController extends Controller
         ];
         return response()->json($out);
 
+    }
+
+    public function getDetailsForPriceRow(Request $request){
+
+        $status = 'success';
+
+        $thicknesses = Thicknesses::where('status', 1)->get();
+        $labels = Labels::where('status', 1)->get();
+
+        return response()->json([
+            'status' =>  $status,
+            'thicknesses' =>  $thicknesses,
+            'labels' =>  $labels,
+        ]);
     }
 }

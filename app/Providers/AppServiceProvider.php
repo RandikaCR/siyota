@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\ProductCategories;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +20,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        view()->composer('*', function ($view) {
+            $navProductCategories = ProductCategories::where('status', 1)->orderBy('display_order', 'ASC')->get();
+            view()->share('navProductCategories', $navProductCategories);
+
+
+        });
     }
 }

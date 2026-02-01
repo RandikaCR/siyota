@@ -8,9 +8,11 @@ use App\Http\Controllers\Backend\DashboardController AS BackendDashboard;
 use App\Http\Controllers\Backend\ProductsController AS BackendProducts;
 use App\Http\Controllers\Backend\ProductLabelsController AS BackendProductLabels;
 use App\Http\Controllers\Backend\ProductThicknessesController AS BackendProductThicknesses;
+use App\Http\Controllers\Backend\ProductCategoriesController AS BackendProductCategories;
 
 //FRONTEND CONTROLLERS
 use App\Http\Controllers\Frontend\FrontendController AS Frontend;
+use App\Http\Controllers\Frontend\ProductsController AS FrontendProducts;
 
 //1 - Frontend Routes
 Route::group([ 'prefix' =>'/'], function () {
@@ -20,6 +22,10 @@ Route::group([ 'prefix' =>'/'], function () {
     Route::get('/contact-us', [Frontend::class, 'contactUs'])->name('frontend.contactUs');
     Route::get('/services', [Frontend::class, 'services'])->name('frontend.services');
     Route::get('/gallery', [Frontend::class, 'gallery'])->name('frontend.gallery');
+
+    Route::get('/product-categories', [FrontendProducts::class, 'index'])->name('frontend.products.index');
+    Route::get('/product-categories/{slug}', [FrontendProducts::class, 'index'])->name('frontend.products.indexWithCategory');
+    Route::get('/product/{slug}', [FrontendProducts::class, 'view'])->name('frontend.products.view');
 
     Route::post('/contact/send-message', [Frontend::class, 'sendMessage'])->name('frontend.contacts.sendMessage');
     Route::post('/app-logout', [Frontend::class, 'appLogout'])->name('frontend.auth.appLogout');
@@ -48,6 +54,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/products/set-primary-image', [BackendProducts::class, 'setPrimaryImage'])->name('backend.products.setPrimaryImage');
         Route::post('/products/image-delete', [BackendProducts::class, 'deleteImage'])->name('backend.products.deleteImage');
         Route::post('/products/status', [BackendProducts::class, 'status'])->name('backend.products.status');
+        Route::post('/products/get-details-for-price', [BackendProducts::class, 'getDetailsForPriceRow'])->name('backend.products.getDetailsForPriceRow');
 
 
         Route::get('/labels', [BackendProductLabels::class, 'index'])->name('backend.labels.index');
@@ -61,6 +68,14 @@ Route::middleware('auth')->group(function () {
         Route::post('/thicknesses/get', [BackendProductThicknesses::class, 'get'])->name('backend.thicknesses.get');
         Route::post('/thicknesses/status', [BackendProductThicknesses::class, 'status'])->name('backend.thicknesses.status');
         Route::post('/thicknesses/slug-generator', [BackendProductThicknesses::class, 'slugGenerator'])->name('backend.thicknesses.slugGenerator');
+
+
+        Route::get('/product-categories', [BackendProductCategories::class, 'index'])->name('backend.productCategories.index');
+        Route::post('/product-categories/store', [BackendProductCategories::class, 'store'])->name('backend.productCategories.store');
+        Route::post('/product-categories/get', [BackendProductCategories::class, 'get'])->name('backend.productCategories.get');
+        Route::post('/product-categories/status', [BackendProductCategories::class, 'status'])->name('backend.productCategories.status');
+        Route::post('/product-categories/slug-generator', [BackendProductCategories::class, 'slugGenerator'])->name('backend.productCategories.slugGenerator');
+
     });
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

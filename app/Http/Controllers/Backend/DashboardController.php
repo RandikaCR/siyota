@@ -10,7 +10,7 @@ class DashboardController extends Controller
     public function index(){
 
         $req = ['screen' => 'user_roles', 'id' => ''];
-        $refId = $this->generateRefId($req);
+        $refId = $this->generateUUId($req);
 
         /*$u = new UserRoles();
         $u->ref_id = $refId;

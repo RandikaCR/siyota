@@ -66,7 +66,7 @@
         <input type="hidden" name="id" value="{{ isset($product) ? $product->id : '' }}">
         <input type="hidden" id="temp_id" name="temp_id" value="{{ $temp_id }}">
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-7">
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Product Details</h4>
@@ -96,7 +96,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-sm-5">
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-end align-items-center">
@@ -106,7 +106,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="row mb-5">
+                        <div class="row mb-2">
                             <div class="col-sm-12">
                                 <label>Category</label>
                                 <select class="form-control" name="product_category_id">
@@ -116,6 +116,75 @@
                                 </select>
                             </div>
                         </div>
+                        <hr>
+                        <div class="row mb-5">
+                            <div class="col-sm-12 mb-4" id="pricing-area">
+                                @if(!empty($product))
+                                    @php
+                                    $priceCount = 0;
+                                    @endphp
+                                    @foreach($product_prices as $pp)
+                                        @if($priceCount == 0)
+                                            <div class="row justify-content-between mb-4">
+                                                <div class="col-sm-3">
+                                                    <label>Default Price</label>
+                                                    <input class="form-control text-end" type="text" name="price[]" placeholder="Enter here...." value="{{ $pp->price }}" required>
+                                                    <input type="hidden" name="product_thickness_id[]" value="0">
+                                                    <input type="hidden" name="product_label_id[]" value="0">
+                                                </div>
+                                                <div class="col-sm-3 d-flex justify-content-end align-items-center">
+                                                    <a href="javascript:void(0);" class="btn btn-secondary waves-effect waves-light add-new-price-row"><i class="mdi mdi-bookmark-plus me-1"></i>Add New Price</a>
+                                                </div>
+                                            </div>
+                                        @else
+                                            <div class="row justify-content-between mb-4">
+                                                <div class="col-sm-4">
+                                                    <label>Thickness</label>
+                                                    <select class="form-control" name="product_thickness_id[]">
+                                                        @foreach($thicknesses as $thickness)
+                                                            <option value="{{ $thickness->id }}" {{ $thickness->id == $pp->thickness_id ? 'selected' : '' }}>{{ $thickness->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label>Label</label>
+                                                    <select class="form-control" name="product_label_id[]">
+                                                        @foreach($labels as $label)
+                                                            <option value="{{ $label->id }}" {{ $label->id == $pp->label_id ? 'selected' : '' }}>{{ $label->name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <label>Price</label>
+                                                    <input class="form-control text-end" type="text" name="price[]" placeholder="Enter here...." value="{{ $pp->price }}" required>
+                                                </div>
+                                                <div class="col-sm-2 d-flex justify-content-end align-items-end">
+                                                    <a href="javascript:void(0);" class="btn btn-danger waves-effect waves-light delete-price"><i class="mdi mdi-delete"></i></a>
+                                                </div>
+                                            </div>
+                                        @endif
+
+                                        @php
+                                            $priceCount++;
+                                        @endphp
+                                    @endforeach
+
+                                @else
+                                    <div class="row justify-content-between mb-4">
+                                        <div class="col-sm-3">
+                                            <label>Default Price</label>
+                                            <input class="form-control text-end" type="text" name="price[]" placeholder="Enter here...." value="" required>
+                                            <input type="hidden" name="product_thickness_id[]" value="0">
+                                            <input type="hidden" name="product_label_id[]" value="0">
+                                        </div>
+                                        <div class="col-sm-3 d-flex justify-content-end align-items-center">
+                                            <a href="javascript:void(0);" class="btn btn-secondary waves-effect waves-light add-new-price-row"><i class="mdi mdi-bookmark-plus me-1"></i>Add New Price</a>
+                                        </div>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                        <hr>
                         <div class="row">
                             <div class="col-sm-12 mb-4">
                                 <label>Images</label>
@@ -241,6 +310,41 @@
             }
 
             return $item;
+        }
+
+        function priceRow($item){
+
+            $thicknesses = $('<select></select>').addClass('form-control').attr('name', 'product_thickness_id[]');
+            $.each($item.thicknesses, function ($index, $d){
+                $('<option></option>').attr('value', $d.id).text($d.name).appendTo($thicknesses);
+            });
+
+            $labels = $('<select></select>').addClass('form-control').attr('name', 'product_label_id[]');
+            $.each($item.labels, function ($index, $d){
+                $('<option></option>').attr('value', $d.id).text($d.name).appendTo($labels);
+            });
+
+
+            $el = $('<div></div>').addClass('row justify-content-between mb-4');
+
+            $('<div></div>').addClass('col-sm-4')
+                .append($('<label></label>').text('Thickness'))
+                .append($thicknesses).appendTo($el);
+
+            $('<div></div>').addClass('col-sm-4')
+                .append($('<label></label>').text('Label'))
+                .append($labels).appendTo($el);
+
+            $('<div></div>').addClass('col-sm-2')
+                .append($('<label></label>').text('Price'))
+                .append($('<input>').addClass('form-control text-end').attr('name', 'price[]').attr('type', 'text').attr('placeholder', 'Enter here....').attr('required', 'required')).appendTo($el);
+
+            $('<div></div>').addClass('col-sm-2 d-flex justify-content-end align-items-end')
+                .append($('<a></a>').attr('href', 'javascript:void(0);').addClass('btn btn-danger waves-effect waves-light delete-price')
+                    .append($('<i></i>').addClass('mdi mdi-delete'))
+                ).appendTo($el);
+
+            return $el;
         }
 
         ClassicEditor.create(document.querySelector("#content-en"), {
@@ -485,6 +589,69 @@
                     }
                 });
 
+
+            });
+
+
+            $('.add-new-price-row').on('click', function ($e){
+                $.ajax({
+                    url: "{{ route('backend.products.getDetailsForPriceRow') }}",
+                    type: 'POST',
+                    data: {
+                        _token: csrf_token()
+                    },
+                    dataType: 'json',
+                    beforeSend: function ($jqXHR, $obj) {
+                        Swal.fire({
+                            title: "Processing...",
+                            text: "Please wait",
+                            imageUrl: "{{ asset('assets/common/images/ajax-loader.gif') }}",
+                            showConfirmButton: false,
+                            allowOutsideClick: false
+                        });
+                    },
+                    success: function ($response, $textStatus, $jqXHR) {
+                        Swal.close();
+                        $row = priceRow($response);
+                        $('#pricing-area').append($row);
+                    },
+                    error: function ($jqXHR, $textStatus, $errorThrown) {
+                        Swal.fire('Oops...', 'Something went wrong with the System!', 'error');
+                    }
+                });
+            });
+
+            $('#pricing-area').on('click', '.delete-price', function ($e){
+                $e.preventDefault();
+                $this = $(this);
+                $id = $($this).data('id');
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You want to delete this Price!",
+                    icon: "warning",
+                    showCancelButton: !0,
+                    showLoaderOnConfirm: true,
+                    confirmButtonText: "Yes, Do it!",
+                    cancelButtonText: "No, cancel!",
+                    confirmButtonClass: "btn btn-primary w-xs me-2 mt-2",
+                    cancelButtonClass: "btn btn-danger w-xs mt-2",
+                    buttonsStyling: !1,
+                    showCloseButton: !0,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+
+                        setTimeout(function() {
+                            Swal.fire('Done!', 'Price has been deleted!', 'success');
+
+                            $($this).parent().parent().fadeOut('slow');
+                            setTimeout(function (){
+                                $($this).parent().parent().remove();
+                            },1000);
+
+                        }, 50);
+                    }
+                });
 
             });
 

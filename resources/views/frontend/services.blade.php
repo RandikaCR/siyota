@@ -56,7 +56,7 @@
                     <a href="{{ url('/landscapes') }}" class=" btn btn-dark text-uppercase btn-hover-bg-primary btn-hover-border-primary px-11"  data-animate="fadeInUp">Explore Now</a>
                 </div>
                 <div class="col-sm-5 pb-16">
-                    <a href="{{ url('/products') }}">
+                    <a href="{{ url('/product-categories') }}">
                         <div class="mb-2 pb-3 text-center" data-animate="fadeInUp">
                             <p class="fs-23px mb-5 font-bebas text-uppercase new-theme-secondary">Concrete Products</p>
                         </div>
@@ -64,7 +64,7 @@
                             <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/services-2.jpg') }}">
                         </div>
                     </a>
-                    <a href="{{ url('/products') }}" class=" btn btn-dark text-uppercase btn-hover-bg-primary btn-hover-border-primary px-11"  data-animate="fadeInUp">Explore Now</a>
+                    <a href="{{ url('/product-categories') }}" class=" btn btn-dark text-uppercase btn-hover-bg-primary btn-hover-border-primary px-11"  data-animate="fadeInUp">Explore Now</a>
                 </div>
             </div>
 

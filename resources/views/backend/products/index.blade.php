@@ -96,7 +96,7 @@
                                             <th class="text-center" scope="col">
                                                 <p class="mb-0">ID</p>
                                             </th>
-                                            <th scope="col" style="width: 10%;">
+                                            <th scope="col" style="width: 5%;">
                                                 <p class="mb-0"></p>
                                             </th>
                                             <th scope="col" style="width: 50%;">

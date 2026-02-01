@@ -16,7 +16,7 @@
                     <div class="hero-content text-start">
                         <div data-animate="fadeInDown">
                             <p class="text-body-emphasis mb-0 text-uppercase fw-semibold fs-15px new-theme-secondary">Shape Your Outdoors</p>
-                            <h1 class="mb-0 hero-title font-bebas new-theme-secondary">Build It to Last</h1>
+                            <h1 class="mb-0 hero-title font-bebas new-theme-purple">Build It to Last</h1>
                             <p class="hero-desc text-body-calculate fs-18px mb-11 new-theme-secondary">Concrete that adds beauty, not just structure</p>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                     <div class="hero-content text-start">
                         <div data-animate="fadeInDown">
                             <p class="text-body-emphasis mb-0 text-uppercase fw-semibold fs-15px new-theme-secondary">Set Once</p>
-                            <h1 class="mb-0 hero-title font-bebas new-theme-secondary">Built for Life</h1>
+                            <h1 class="mb-0 hero-title font-bebas new-theme-purple">Built for Life</h1>
                             <p class="hero-desc text-body-calculate fs-18px mb-11 new-theme-secondary">Strength you never have to worry about</p>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                     <div class="hero-content text-start">
                         <div data-animate="fadeInDown">
                             <p class="text-body-emphasis mb-0 text-uppercase fw-semibold fs-15px new-theme-secondary">Strong Underfoot</p>
-                            <h1 class="mb-0 hero-title font-bebas new-theme-secondary">Perfect in Finish</h1>
+                            <h1 class="mb-0 hero-title font-bebas new-theme-purple">Perfect in Finish</h1>
                             <p class="hero-desc text-body-calculate fs-18px mb-11 new-theme-secondary">Built for heavy use & designed to look sharp</p>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                     <div class="hero-content text-start">
                         <div data-animate="fadeInDown">
                             <p class="text-body-emphasis mb-0 text-uppercase fw-semibold fs-15px new-theme-secondary">Clean Design</p>
-                            <h1 class="mb-0 hero-title font-bebas new-theme-secondary">Solid Beauty</h1>
+                            <h1 class="mb-0 hero-title font-bebas new-theme-purple">Solid Beauty</h1>
                             <p class="hero-desc text-body-calculate fs-18px mb-11 new-theme-secondary">Timeless concrete for modern spaces</p>
                         </div>
                     </div>
@@ -161,7 +161,7 @@
                     <a href="{{ url('/landscapes') }}" class=" btn btn-dark text-uppercase btn-hover-bg-primary btn-hover-border-primary px-11"  data-animate="fadeInUp">Explore Now</a>
                 </div>
                 <div class="col-sm-5 pb-16">
-                    <a href="{{ url('/products') }}">
+                    <a href="{{ url('/product-categories') }}">
                         <div class="mb-2 pb-3 text-center" data-animate="fadeInUp">
                             <p class="fs-23px mb-5 font-bebas text-uppercase new-theme-secondary">Concrete Products</p>
                         </div>
@@ -169,7 +169,7 @@
                             <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/services-2.jpg') }}">
                         </div>
                     </a>
-                    <a href="{{ url('/products') }}" class=" btn btn-dark text-uppercase btn-hover-bg-primary btn-hover-border-primary px-11"  data-animate="fadeInUp">Explore Now</a>
+                    <a href="{{ url('/product-categories') }}" class=" btn btn-dark text-uppercase btn-hover-bg-primary btn-hover-border-primary px-11"  data-animate="fadeInUp">Explore Now</a>
                 </div>
             </div>
 

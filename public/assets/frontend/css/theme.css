@@ -131,9 +131,9 @@
 
 
 [data-bs-theme="dark"] {
-  --bs-body-color: #E7E7E7;
+  --bs-body-color: #050035;
   --bs-body-color-rgb: 171, 171, 171;
-  --bs-body-bg: #050035;
+  --bs-body-bg: #E7E7E7;
   --bs-body-bg-rgb: 31, 38, 29;
   --bs-emphasis-color: #fff;
   --bs-emphasis-color-rgb: 255, 255, 255;
@@ -218,7 +218,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-bottom: 0.5rem;
   font-weight: 600;
   line-height: 1.3;
-  color: var(--bs-heading-color, inherit);
+  color: var(--bs-body-color, inherit);
 }
 
 h1, .h1 {
@@ -330,8 +330,8 @@ a {
 }
 
 a:hover {
-  --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
-  text-decoration: underline;
+  --bs-link-color-rgb: inherit;
+  text-decoration: none;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -4971,13 +4971,13 @@ textarea.form-control-lg {
 
 .dropdown-menu {
   --bs-dropdown-zindex: 1000;
-  --bs-dropdown-min-width: 10rem;
+  --bs-dropdown-min-width: 20rem;
   --bs-dropdown-padding-x: 0;
   --bs-dropdown-padding-y: 1rem;
   --bs-dropdown-spacer: 0.25rem;
   --bs-dropdown-font-size: 0.9375rem;
   --bs-dropdown-color: var(--bs-body-color);
-  --bs-dropdown-bg: var(--bs-body-bg);
+  --bs-dropdown-bg: var(--bs-body-color);
   --bs-dropdown-border-color: var(--bs-border-color-translucent);
   --bs-dropdown-border-radius: 0.1875rem;
   --bs-dropdown-border-width: 0;
@@ -6480,9 +6480,10 @@ textarea.form-control-lg {
   display: block;
   padding: var(--bs-pagination-padding-y) var(--bs-pagination-padding-x);
   font-size: var(--bs-pagination-font-size);
-  color: var(--bs-pagination-color);
+  color: #050035;
   background-color: var(--bs-pagination-bg);
   border: var(--bs-pagination-border-width) solid var(--bs-pagination-border-color);
+    margin-right: 4px;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -6494,10 +6495,10 @@ textarea.form-control-lg {
 
 .page-link:hover {
   z-index: 2;
-  color: var(--bs-pagination-hover-color);
+  color: #E7E7E7;
   text-decoration: none;
-  background-color: var(--bs-pagination-hover-bg);
-  border-color: var(--bs-pagination-hover-border-color);
+  background-color: #050035;
+  border-color: #050035;
 }
 
 .page-link:focus {
@@ -6510,9 +6511,9 @@ textarea.form-control-lg {
 
 .page-link.active, .active > .page-link {
   z-index: 3;
-  color: var(--bs-pagination-active-color);
-  background-color: var(--bs-pagination-active-bg);
-  border-color: var(--bs-pagination-active-border-color);
+  color: #E7E7E7;
+  background-color: #050035;
+  border-color: #050035;
 }
 
 .page-link.disabled, .disabled > .page-link {
@@ -12913,7 +12914,7 @@ textarea.form-control-lg {
 
 .text-body-emphasis {
   --bs-text-opacity: 1;
-  color: var(--bs-emphasis-color) !important;
+  color: var(--bs-body-color) !important;
 }
 
 .text-reset {
@@ -28918,7 +28919,7 @@ textarea.form-control-lg {
 }
 
 .sticky .main-header {
-  background-color: var(--bs-body-bg) !important;
+  background-color: var(--bs-body-color) !important;
 }
 
 #header .nav-item > a {
@@ -29385,7 +29386,7 @@ svg.icon {
 }
 
 .text-primary-hover:hover {
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  color: #5b5b5b !important;
 }
 
 .border-primary-hover:hover {
@@ -29964,7 +29965,7 @@ svg.icon {
 .product-info-2-quantity {
   --bs-bg-opacity: 1;
   z-index: 0;
-  background-color: rgba(var(--bs-secondary-bg-rgb), var(--bs-bg-opacity)) !important;
+  background-color: transparent !important;
   transition: 0.5s;
 }
 
@@ -30661,7 +30662,7 @@ ul.single-product-meta li span:first-child {
 }
 
 .navbar-nav-cate .active {
-  color: var(--bs-emphasis-color) !important;
+  color: #5B5B5B !important;
 }
 
 .widget-product_colors .square {
@@ -31347,6 +31348,11 @@ ul.single-product-meta li span:first-child {
   transform: translateX(100%);
 }
 
+.card-product{
+    border: 1px solid #ccc;
+    border-radius: 0.6rem;
+}
+
 .card-product:hover .card-img-top .btn-add-to-cart {
   opacity: 1;
   transform: translate(-50%, 0);
@@ -31822,7 +31828,7 @@ ul.single-product-meta li span:first-child {
 }
 
 .text-body-emphasis-hover:hover {
-  color: var(--bs-emphasis-color) !important;
+  color: #5b5b5b !important;
 }
 
 .dashboard-wrapper .main-header {

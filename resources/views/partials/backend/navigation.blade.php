@@ -61,6 +61,12 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{ url('/admin/product-categories') }}">
+                        <i class="mdi mdi-store-settings"></i> <span data-key="t-product-categories">Product Categories</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link menu-link" href="{{ url('/admin/labels') }}">
                         <i class="mdi mdi-store-settings"></i> <span data-key="t-labels">Labels</span>
                     </a>

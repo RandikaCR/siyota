@@ -32,11 +32,13 @@
                                         <div class="col">
                                             <ul class="list-unstyled">
                                                 <li>
-                                                    <a href="{{ url('/') }}" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Link</span></a>
+                                                    <a href="{{ url('/product-categories') }}" class="border-hover text-decoration-none py-4 d-block"><span class="border-hover-target">All Products</span></a>
                                                 </li>
-                                                <li>
-                                                    <a href="{{ url('/') }}" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Link</span></a>
-                                                </li>
+                                                @foreach($navProductCategories as $cat)
+                                                    <li>
+                                                        <a href="{{ url('/product-categories/' . $cat->slug) }}" class="border-hover text-decoration-none py-4 d-block"><span class="border-hover-target">{{ $cat->product_category }}</span></a>
+                                                    </li>
+                                                @endforeach
                                             </ul>
                                         </div>
                                     </div>
