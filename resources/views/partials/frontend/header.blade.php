@@ -45,23 +45,8 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 dropdown dropdown-hover dropdown-fullwidth {{ (request()->segment(1) == 'landscapes') ? 'active' : '' }}">
-                            <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px dropdown-toggle" href="{{ url('/landscapes') }}" data-bs-toggle="dropdown" id="menu-item-landscapes" aria-haspopup="true" aria-expanded="false">Landscapes</a><div class="dropdown-menu mega-menu start-0 py-6 " aria-labelledby="menu-item-landscapes">
-                                <div class="megamenu-landscapes container py-8 px-12">
-                                    <div class="row">
-                                        <div class="col">
-                                            <ul class="list-unstyled">
-                                                <li>
-                                                    <a href="{{ url('/') }}" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Link</span></a>
-                                                </li>
-                                                <li>
-                                                    <a href="{{ url('/') }}" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">Link</span></a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 {{ (request()->segment(1) == 'landscapes') ? 'active' : '' }}">
+                            <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px" href="{{ url('/landscapes') }}">Landscapes</a>
                         </li>
                         <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 {{ (request()->segment(1) == 'services') ? 'active' : '' }}">
                             <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px" href="{{ url('/services') }}">Our Services</a>

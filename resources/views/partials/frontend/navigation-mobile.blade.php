@@ -34,22 +34,9 @@
 
                     </div>
                 </li>
-                <li class="nav-item transition-all-xl-1 py-0 dropdown dropdown-fullwidth position-static">
-                    <a class="nav-link d-flex justify-content-between position-relative text-uppercase fw-semibold ls-1 fs-15px dropdown-toggle" href="javascript:void(0);" data-bs-toggle="dropdown" id="menu-item-landscapes" aria-haspopup="true" aria-expanded="false">Landscapes</a>
-                    <div class="dropdown-menu mega-menu start-0 py-6  w-100" aria-labelledby="menu-item-landscapes">
-                        <div class="megamenu-shop container-wide py-8 px-12">
-                            <div class="row">
-                                <div class="col">
-                                    <ul class="list-unstyled mb-0">
-                                        <li>
-                                            <a href="{{ url('/landscapes') }}" class="border-hover text-decoration-none py-3 d-block"><span class="border-hover-target">All Landscapes</span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
+                <li class="nav-item transition-all-xl-1 py-0">
+                    <a class="nav-link d-flex justify-content-between position-relative text-uppercase fw-semibold ls-1 fs-15px"
+                       href="{{ url('/landscapes') }}">Landscapes</a>
                 </li>
                 <li class="nav-item transition-all-xl-1 py-0">
                     <a class="nav-link d-flex justify-content-between position-relative text-uppercase fw-semibold ls-1 fs-15px"
