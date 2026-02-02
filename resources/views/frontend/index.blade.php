@@ -15,9 +15,9 @@
 
                     <div class="hero-content text-start">
                         <div data-animate="fadeInDown">
-                            <p class="text-body-emphasis mb-0 text-uppercase fw-semibold fs-15px new-theme-secondary">Shape Your Outdoors</p>
+                            <p class="text-body-emphasis mb-0 text-uppercase fw-semibold fs-18px new-theme-secondary">Shape Your Outdoors</p>
                             <h1 class="mb-0 hero-title font-bebas new-theme-purple">Build It to Last</h1>
-                            <p class="hero-desc text-body-calculate fs-18px mb-11 new-theme-secondary">Concrete that adds beauty, not just structure</p>
+                            <p class="hero-desc text-body-calculate fs-23px mb-11 new-theme-secondary">Concrete that adds beauty, not just structure</p>
                         </div>
                     </div>
                 </div>
@@ -32,9 +32,9 @@
 
                     <div class="hero-content text-start">
                         <div data-animate="fadeInDown">
-                            <p class="text-body-emphasis mb-0 text-uppercase fw-semibold fs-15px new-theme-secondary">Set Once</p>
+                            <p class="text-body-emphasis mb-0 text-uppercase fw-semibold fs-18px new-theme-secondary">Set Once</p>
                             <h1 class="mb-0 hero-title font-bebas new-theme-purple">Built for Life</h1>
-                            <p class="hero-desc text-body-calculate fs-18px mb-11 new-theme-secondary">Strength you never have to worry about</p>
+                            <p class="hero-desc text-body-calculate fs-23px mb-11 new-theme-secondary">Strength you never have to worry about</p>
                         </div>
                     </div>
                 </div>
@@ -49,9 +49,9 @@
 
                     <div class="hero-content text-start">
                         <div data-animate="fadeInDown">
-                            <p class="text-body-emphasis mb-0 text-uppercase fw-semibold fs-15px new-theme-secondary">Strong Underfoot</p>
+                            <p class="text-body-emphasis mb-0 text-uppercase fw-semibold fs-18px new-theme-secondary">Strong Underfoot</p>
                             <h1 class="mb-0 hero-title font-bebas new-theme-purple">Perfect in Finish</h1>
-                            <p class="hero-desc text-body-calculate fs-18px mb-11 new-theme-secondary">Built for heavy use & designed to look sharp</p>
+                            <p class="hero-desc text-body-calculate fs-23px mb-11 new-theme-secondary">Built for heavy use & designed to look sharp</p>
                         </div>
                     </div>
                 </div>
@@ -66,9 +66,9 @@
 
                     <div class="hero-content text-start">
                         <div data-animate="fadeInDown">
-                            <p class="text-body-emphasis mb-0 text-uppercase fw-semibold fs-15px new-theme-secondary">Clean Design</p>
+                            <p class="text-body-emphasis mb-0 text-uppercase fw-semibold fs-18px new-theme-secondary">Clean Design</p>
                             <h1 class="mb-0 hero-title font-bebas new-theme-purple">Solid Beauty</h1>
-                            <p class="hero-desc text-body-calculate fs-18px mb-11 new-theme-secondary">Timeless concrete for modern spaces</p>
+                            <p class="hero-desc text-body-calculate fs-23px mb-11 new-theme-secondary">Timeless concrete for modern spaces</p>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
     <section class="new-theme-light-bg new-theme-secondary">
 
         <div class="container container-xxl py-lg-17 pt-14 pb-16">
-            <div class="row justify-content-center">
+            <!-- <div class="row justify-content-center">
                 <div class="col-sm-8">
                     <div class="mb-2 pb-3 text-center" data-animate="fadeInUp">
                         <h2 class="mb-0 new-theme-purple font-bebas">Our Story</h2>
@@ -125,17 +125,18 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <div class="row justify-content-center">
                 <div class="col-sm-8">
                     <div class="mb-2 pb-3 text-center" data-animate="fadeInUp">
-                        <p class="fs-23px mb-5 font-bebas text-uppercase new-theme-secondary">We Build What Lasts</p>
+                        <!-- <p class="fs-23px mb-5 font-bebas text-uppercase new-theme-secondary">We Build What Lasts</p> -->
+                        <h2 class="mb-0 new-theme-purple font-bebas">We Build What Lasts</h2>
 
                     </div>
                     <div class="mb-13 pb-3 text-center" data-animate="fadeInUp">
-                        <p class="mb-5 new-theme-secondary">SIYOTA (PVT) LTD is a trusted name in concrete products and landscaping works in Sri Lanka. Based in the Rathnapura District, we focus on one thing only - doing quality work, the right way.</p>
-                        <p class="mb-5 new-theme-secondary">From solid concrete products to clean, well-planned outdoor spaces, Siyota delivers strength, neat finishes, and reliable service. Our work is backed by ISO 9001:2015 certification, so customers can trust our quality every time.
+                        <p class="mb-5 new-theme-secondary">SIYOTA (PVT) LTD is a trusted name in concrete products and landscaping works in Sri Lanka, based in the Rathnapura District. We focus on one thing only - doing quality work, the right way.</p>
+                        <p class="mb-5 new-theme-secondary">From solid concrete products to clean, well-planned outdoor spaces, we deliver strength, neat finishes, and reliable service. Our work is backed by ISO 9001:2015 certification, so customers can trust our quality every time.
                         </p>
                     </div>
                 </div>

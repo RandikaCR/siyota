@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="mb-2 pb-3" data-animate="fadeInUp">
-                                <h2 class="fs-56px mb-5 new-theme-purple font-bebas">Shaping spaces.<br>Enhancing Nature</h2>
+                                <h2 class="fs-56px mb-5 new-theme-purple font-bebas">Shaping spaces<br>Enhancing Nature</h2>
                             </div>
                         </div>
                         <div class="col-sm-6">

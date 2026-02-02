@@ -34,9 +34,9 @@
 
                     </div>
                     <div class="mb-5 pb-3 text-center" data-animate="fadeInUp">
-                        <p class="mb-5 new-theme-secondary">SIYOTA (PVT) LTD started in 2006 with two employees and one product—cement bricks. With hard work and customer trust, we grew step by step.</p>
-                        <p class="mb-5 new-theme-secondary">Today, we manufacture a wide range of concrete products and also carry out complete landscaping works.</p>
-                        <p class="mb-5 new-theme-secondary">From a small beginning, Siyota now supports over 200 direct and indirect jobs, contributing to the growth of the area.</p>
+                        <p class="mb-5 new-theme-secondary">SIYOTA (PVT) LTD started in 2006 with two employees and one product — cement bricks.<br>With hard work and customer trust, we grew step by step.</p>
+                        <p class="mb-5 new-theme-secondary">Today, we manufacture a wide range of concrete products and also carry out complete landscaping works.
+                        <br>From a small beginning, Siyota now supports over 200 direct and indirect jobs, contributing to the growth of the area.</p>
                     </div>
                 </div>
             </div>
@@ -51,6 +51,8 @@
                         <p class="mb-5 new-theme-secondary">To become a leading concrete product and landscaping company in Sri Lanka, known for best quality, dependable service, and long-term value.</p>
                     </div>
                 </div>
+            </div>
+            <div class="row justify-content-around">
                 <div class="col-sm-5">
                     <div class="mb-2 pb-3 text-center" data-animate="fadeInUp">
 
@@ -58,12 +60,12 @@
                         <p class="fs-23px mb-5 font-bebas text-uppercase new-theme-secondary">Quality Without Compromise</p>
                     </div>
                     <div class="mb-13 pb-3" data-animate="fadeInUp">
-                        <ul class="mb-5 new-theme-secondary">
-                            <li>Produce strong, durable concrete products customers can rely on.</li>
-                            <li>Deliver practical and attractive landscaping solutions.</li>
-                            <li>Maintain consistent quality through certified systems.</li>
-                            <li>Complete every job on time, without shortcuts.</li>
-                            <li>Create jobs and support the local community.</li>
+                        <ul class="mb-5 new-theme-secondary text-center" style="list-style: none;">
+                            <li class="mb-4">Produce strong, durable concrete products customers can rely on.</li>
+                            <li class="mb-4">Deliver practical and attractive landscaping solutions.</li>
+                            <li class="mb-4">Maintain consistent quality through certified systems.</li>
+                            <li class="mb-4">Complete every job on time, without shortcuts.</li>
+                            <li class="mb-4">Create jobs and support the local community.</li>
                         </ul>
                     </div>
                 </div>
@@ -72,12 +74,13 @@
             <div class="row justify-content-center">
                 <div class="col-sm-8">
                     <div class="mb-2 pb-3 text-center" data-animate="fadeInUp">
-                        <p class="fs-23px mb-5 font-bebas text-uppercase new-theme-secondary">We Build What Lasts</p>
+                        <!-- <p class="fs-23px mb-5 font-bebas text-uppercase new-theme-secondary">We Build What Lasts</p> -->
+                        <h2 class="mb-0 new-theme-purple font-bebas">We Build What Lasts</h2>
 
                     </div>
                     <div class="mb-13 pb-3 text-center" data-animate="fadeInUp">
-                        <p class="mb-5 new-theme-secondary">SIYOTA (PVT) LTD is a trusted name in concrete products and landscaping works in Sri Lanka. Based in the Rathnapura District, we focus on one thing only - doing quality work, the right way.</p>
-                        <p class="mb-5 new-theme-secondary">From solid concrete products to clean, well-planned outdoor spaces, Siyota delivers strength, neat finishes, and reliable service. Our work is backed by ISO 9001:2015 certification, so customers can trust our quality every time.
+                        <p class="mb-5 new-theme-secondary">SIYOTA (PVT) LTD is a trusted name in concrete products and landscaping works in Sri Lanka, based in the Rathnapura District. We focus on one thing only - doing quality work, the right way.</p>
+                        <p class="mb-5 new-theme-secondary">From solid concrete products to clean, well-planned outdoor spaces, we deliver strength, neat finishes, and reliable service. Our work is backed by ISO 9001:2015 certification, so customers can trust our quality every time.
                         </p>
                     </div>
                 </div>
