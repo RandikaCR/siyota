@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\ProductsController AS BackendProducts;
 use App\Http\Controllers\Backend\ProductLabelsController AS BackendProductLabels;
 use App\Http\Controllers\Backend\ProductThicknessesController AS BackendProductThicknesses;
 use App\Http\Controllers\Backend\ProductCategoriesController AS BackendProductCategories;
+use App\Http\Controllers\Backend\LandscapesController AS BackendLandscapes;
 
 //FRONTEND CONTROLLERS
 use App\Http\Controllers\Frontend\FrontendController AS Frontend;
@@ -22,6 +23,7 @@ Route::group([ 'prefix' =>'/'], function () {
     Route::get('/contact-us', [Frontend::class, 'contactUs'])->name('frontend.contactUs');
     Route::get('/services', [Frontend::class, 'services'])->name('frontend.services');
     Route::get('/gallery', [Frontend::class, 'gallery'])->name('frontend.gallery');
+    Route::get('/landscapes', [Frontend::class, 'landscapes'])->name('frontend.landscapes');
 
     Route::get('/product-categories', [FrontendProducts::class, 'index'])->name('frontend.products.index');
     Route::get('/product-categories/{slug}', [FrontendProducts::class, 'index'])->name('frontend.products.indexWithCategory');
@@ -43,6 +45,14 @@ Route::middleware('auth')->group(function () {
         // D
         Route::get('/', [BackendDashboard::class, 'index'])->name('backend.dashboard');
 
+        // L
+        Route::get('/landscapes', [BackendLandscapes::class, 'index'])->name('backend.landscapes.index');
+        Route::get('/landscapes/create', [BackendLandscapes::class, 'create'])->name('backend.landscapes.create');
+        Route::get('/landscapes/edit/{slug}', [BackendLandscapes::class, 'edit'])->name('backend.landscapes.edit');
+        Route::post('/landscapes/store', [BackendLandscapes::class, 'store'])->name('backend.landscapes.store');
+        Route::post('/landscapes/delete', [BackendLandscapes::class, 'delete'])->name('backend.landscapes.delete');
+        Route::post('/landscapes/upload-image', [BackendLandscapes::class, 'imageUpload'])->name('backend.landscapes.imageUpload');
+        Route::post('/landscapes/status', [BackendLandscapes::class, 'status'])->name('backend.landscapes.status');
 
         // P
         Route::get('/products', [BackendProducts::class, 'index'])->name('backend.products.index');

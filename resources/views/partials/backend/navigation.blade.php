@@ -52,6 +52,22 @@
                     </div>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#sidebarLandscapes" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarLandscapes">
+                        <i class="mdi mdi-gift"></i> <span data-key="t-raffles-main">Landscapes</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarLandscapes">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ url('/admin/landscapes') }}" class="nav-link" data-key="t-landscapes">All Landscapes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('/admin/landscapes/create') }}" class="nav-link" data-key="t-landscapes-add">Add New</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
                 <li class="menu-title"><span data-key="t-system">System</span></li>
 
                 <li class="nav-item">

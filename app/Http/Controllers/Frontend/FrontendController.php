@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Landscapes;
 
 class FrontendController extends Controller
 {
@@ -31,6 +32,19 @@ class FrontendController extends Controller
     public function gallery(Request $request)
     {
         return view('frontend.gallery');
+    }
+
+    public function landscapes(Request $request)
+    {
+        $landscapes = Landscapes::select(
+            'landscapes.*',
+        )
+            ->where('landscapes.status', 1)
+            ->get();
+
+        return view('frontend.landscapes', [
+            'landscapes' => $landscapes
+        ]);
     }
 
 
