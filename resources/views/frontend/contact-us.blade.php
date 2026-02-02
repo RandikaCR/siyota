@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="col-sm-3">
-                    <div class="">
+                    <div class="ms-5">
                         <h2 class="mb-5 fs-3 new-theme-purple font-bebas">Contact Details</h2>
 
                         <p class=" fs-6 new-theme-secondary"><i class="fa fa-location-pin new-theme-purple pe-4"></i>Siyota Enterprises
