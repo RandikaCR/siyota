@@ -26,7 +26,7 @@
     <section class="new-theme-light-bg new-theme-secondary">
         <div class="container container-xxl py-lg-17 pt-14 pb-16">
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-9">
                     <div id="map" class="mapbox-gl map-point-animate map-box-has-effect" style="height:530px">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.3895144888716!2d80.55454697582458!3d6.598418622286493!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3ed945d837d39%3A0x5e0c03aaa727ac65!2sSiyota%20(pvt)ltd!5e0!3m2!1sen!2slk!4v1769670112318!5m2!1sen!2slk" width="100%" class="theme-border-radius" height="530px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
@@ -59,7 +59,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-sm-3">
                     <div class="">
                         <h2 class="mb-5 fs-3 new-theme-purple font-bebas">Contact Details</h2>
 
@@ -69,9 +69,6 @@
                         </p>
                         <p class="fs-6 new-theme-secondary"><i class="fa fa-envelope new-theme-purple pe-4"></i> siyotaenterprises@gmail.com</p>
                         <p class="fs-6 fw-bold new-theme-secondary"><i class="fa fa-phone new-theme-purple pe-4"></i> 076 878 1126</p>
-                    </div>
-                    <div class="mt-20">
-                        <h2 class="mb-5 fs-3 new-theme-purple font-bebas">Our Partners</h2>
                     </div>
                 </div>
             </div>
