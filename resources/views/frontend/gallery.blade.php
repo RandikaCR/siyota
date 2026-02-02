@@ -30,12 +30,12 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="mb-2 pb-3" data-animate="fadeInUp">
-                                <h2 class="fs-56px mb-5 new-theme-purple font-bebas">Building Excellence</h2>
+                                <h2 class="fs-56px mb-5 new-theme-purple font-bebas">OUR PEOPLE<br>OUR PROCESS</h2>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="mb-2 pb-3" data-animate="fadeInUp">
-                                <p class="fs-18px">Our services cover complete landscaping solutions along with durable, carefully selected landscape accessories. Our services cover complete landscaping solutions along with durable, carefully selected landscape accessories.</p>
+                                <p class="fs-18px">Skilled team and advanced technology bring every project to life. Each image reflects our commitment to craftsmanship, innovation, and high standards.</p>
                                 <p></p>
                             </div>
                         </div>

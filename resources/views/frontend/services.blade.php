@@ -30,13 +30,12 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="mb-2 pb-3" data-animate="fadeInUp">
-                                <h2 class="fs-56px mb-5 new-theme-purple font-bebas">Shaping spaces<br>Enhancing Nature</h2>
+                                <h2 class="fs-56px mb-5 new-theme-purple font-bebas">FROM CONCEPT<br>TO CREATION</h2>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="mb-2 pb-3" data-animate="fadeInUp">
-                                <p class="fs-18px">Our services cover complete landscaping solutions along with durable, carefully selected landscape accessories.</p>
-                                <p class="fs-18px">Our services cover complete landscaping solutions along with durable, carefully selected landscape accessories.</p>
+                                <p class="fs-18px">From durable concrete products to creative landscape designs, we deliver quality, innovation, and lasting results for every project.</p>
                                 <p></p>
                             </div>
                         </div>
