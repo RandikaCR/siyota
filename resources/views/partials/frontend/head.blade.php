@@ -46,3 +46,52 @@
 <link href="{{ asset('assets/common/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/css/lightgallery.min.css" integrity="sha512-QMCloGTsG2vNSnHcsxYTapI6pFQNnUP6yNizuLL5Wh3ha6AraI6HrJ3ABBaw6SIUHqlSTPQDs/SydiR98oTeaQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style type="text/css">
+    .features__shape img {
+        position: absolute;
+    }
+
+    .features__shape img.shape-right{
+        right: 5px;
+        top: 20px;
+        max-width: 160px;
+        transition-delay: .1s;
+        transition-duration: .7s;
+        -webkit-animation: moverTopRight 4s infinite  alternate;
+        animation: moverTopRight 4s infinite  alternate;
+    }
+
+    .features__shape img.shape-left{
+        left: 5px;
+        bottom: 20px;
+        max-width: 160px;
+        transition-delay: .1s;
+        transition-duration: .7s;
+        -webkit-animation: moverTopRight 4s infinite  alternate;
+        animation: moverTopRight 4s infinite  alternate;
+    }
+
+
+    @-webkit-keyframes moverTopRight {
+        0% { transform: translateY(0); }
+        50% { transform: rotate(10deg); }
+        100% { transform: translateY(4px); }
+    }
+    @keyframes moverTopRight {
+        0% { transform: translateY(0); }
+        50% { transform: rotate(10deg); }
+        100% { transform: translateY(4px); }
+    }
+
+    @-webkit-keyframes moverBottomLeft {
+        0% { transform: translateY(0); }
+        50% { transform: rotate(10deg); }
+        100% { transform: translateY(-4px); }
+    }
+    @keyframes moverBottomLeft {
+        0% { transform: translateY(0); }
+        50% { transform: rotate(10deg); }
+        100% { transform: translateY(-4px); }
+    }
+</style>

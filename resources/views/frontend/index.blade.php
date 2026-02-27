@@ -127,7 +127,10 @@
                 </div>
             </div> -->
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center position-relative">
+                <div class="features__shape">
+                    <img class="banner-swing-img-bottom-right shape-right" src="{{ asset('assets/common/images/shape_right.png') }}" alt="shape" data-sal="zoom-in" data-sal-duration="700" data-sal-delay="100">
+                </div>
                 <div class="col-sm-8">
                     <div class="mb-2 pb-3 text-center" data-animate="fadeInUp">
                         <!-- <p class="fs-23px mb-5 font-bebas text-uppercase new-theme-secondary">We Build What Lasts</p> -->
@@ -174,7 +177,7 @@
                 </div>
             </div>
 
-            <div class="row justify-content-center">
+            <div class="row justify-content-center position-relative">
                 <div class="col-sm-8">
                     <div class="mb-2 pb-3 text-center" data-animate="fadeInUp">
                         <h2 class="mb-0 new-theme-purple font-bebas">Our Team</h2>
@@ -208,6 +211,10 @@
                             <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/about-team.jpg') }}">
                         </div>
                     </div>
+                </div>
+
+                <div class="features__shape">
+                    <img class="banner-swing-img-bottom-right shape-left" src="{{ asset('assets/common/images/shape_left.png') }}" alt="shape" data-sal="zoom-in" data-sal-duration="700" data-sal-delay="100">
                 </div>
             </div>
 
