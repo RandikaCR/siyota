@@ -90,8 +90,8 @@ class ProductsController extends Controller
                     ->orWhere('products.description', 'like', "%$keyword%");
             })
             ->where('products.slug', $slug)
-            ->where('product_prices.thickness_id', 0)
-            ->where('product_prices.label_id', 0)
+            //->where('product_prices.thickness_id', 0)
+            //->where('product_prices.label_id', 0)
             ->first();
 
         if (empty($product)){
