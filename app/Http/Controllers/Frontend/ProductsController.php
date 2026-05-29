@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Labels;
 use App\Models\ProductCategories;
+use App\Models\ProductLabels;
 use App\Models\ProductPrices;
 use App\Models\Products;
+use App\Models\ProductThicknesses;
 use App\Models\Thicknesses;
 use Illuminate\Http\Request;
 
@@ -56,6 +58,36 @@ class ProductsController extends Controller
 
     public function view(Request $request, $slug = null){
 
+        $prices = ProductPrices::all();
+        $status = 1;
+        foreach ($prices as $price){
+            $productId = $price->product_id;
+
+            if (!empty($price->thickness_id)){
+                $tId = $price->thickness_id;
+                $pt = ProductThicknesses::where('product_id', $productId)->where('thickness_id', $tId)->first();
+                if (empty($pt)){
+                    $s = new ProductThicknesses();
+                    $s->product_id = $productId;
+                    $s->thickness_id = $tId;
+                    $s->status = $status;
+                    $s->save();
+                }
+            }
+
+            if (!empty($price->label_id)){
+                $lId = $price->label_id;
+                $pl = ProductLabels::where('product_id', $productId)->where('label_id', $lId)->first();
+                if (empty($pl)){
+                    $s = new ProductLabels();
+                    $s->product_id = $productId;
+                    $s->label_id = $lId;
+                    $s->status = $status;
+                    $s->save();
+                }
+            }
+        }
+        exit();
         $keyword = !empty($request->keyword) ? $request->keyword : null;
 
 

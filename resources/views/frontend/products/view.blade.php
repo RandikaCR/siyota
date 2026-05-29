@@ -96,7 +96,7 @@
                             {{--<label class="text-body-emphasis fw-semibold py-5" for="size">Thicknesses: </label>--}}
                             <ul>
                                 @foreach($product->product_thicknesses as $th)
-                                    <li>{{ $th->name }}</li>
+                                    <li class="mb-3">{{ $th->name }}</li>
                                 @endforeach
                             </ul>
                         </div>
@@ -107,7 +107,7 @@
                         {{--<label class="text-body-emphasis fw-semibold py-5" for="quantity">Labels: </label>--}}
                         <ul>
                             @foreach($product->product_labels as $lb)
-                                <li>{{ $lb->name }}</li>
+                                <li class="mb-3">{{ $lb->name }}</li>
                             @endforeach
                         </ul>
                     </div>
