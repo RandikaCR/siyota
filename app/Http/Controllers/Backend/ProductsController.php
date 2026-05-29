@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\Labels;
 use App\Models\ProductCategories;
 use App\Models\ProductImages;
+use App\Models\ProductLabels;
 use App\Models\ProductPrices;
 use App\Models\Products;
+use App\Models\ProductThicknesses;
 use App\Models\Thicknesses;
 use Illuminate\Http\Request;
 
@@ -67,6 +69,9 @@ class ProductsController extends Controller
         $labels = Labels::where('status', 1)->get();
         $productPrices = ProductPrices::where('product_id', $tempId)->get();
 
+        $productThicknesses = ProductThicknesses::where('product_id', $tempId)->get();
+        $productLabels = ProductLabels::where('product_id', $tempId)->get();
+
         return view('backend.products.create',[
             'temp_id' => $tempId,
             'product' => $product,
@@ -75,6 +80,8 @@ class ProductsController extends Controller
             'thicknesses' => $thicknesses,
             'labels' => $labels,
             'product_prices' => $productPrices,
+            'product_thicknesses' => $productThicknesses,
+            'product_labels' => $productLabels,
         ]);
     }
 
@@ -112,8 +119,64 @@ class ProductsController extends Controller
 
         $productId = $save->id;
 
+        // Labels
+        $availableLabelIds = [];
+        if (!empty($request->label_ids)) {
+            foreach ($request->label_ids as $labelId) {
+                $availableLabelIds[] = $labelId;
+
+                $getLabel = ProductLabels::where('product_id', $productId)
+                    ->where('label_id', $labelId)
+                    ->first();
+                if (empty($getLabel)) {
+                    $p = new ProductLabels();
+                    $p->product_id = $productId;
+                    $p->label_id = $labelId;
+                    $p->status = 1;
+                    $p->save();
+                }
+            }
+        }
+
+        // Delete Labels
+        $getAllLabels = ProductLabels::where('product_id', $productId)->get();
+        foreach($getAllLabels as $pl){
+            if (!in_array($pl->label_id, $availableLabelIds)) {
+                $p = ProductPrices::find($pl->id);
+                $p->delete();
+            }
+        }
+
+        // Thicknesses
+        $availableThicknessIds = [];
+        if (!empty($request->thickness_ids)) {
+            foreach ($request->thickness_ids as $thicknessId) {
+                $availableThicknessIds[] = $thicknessId;
+
+                $getThickness = ProductThicknesses::where('product_id', $productId)
+                    ->where('thickness_id', $thicknessId)
+                    ->first();
+                if (empty($getThickness)) {
+                    $p = new ProductThicknesses();
+                    $p->product_id = $productId;
+                    $p->thickness_id = $thicknessId;
+                    $p->status = 1;
+                    $p->save();
+                }
+            }
+        }
+
+        // Delete Thicknesses
+        $getAllThicknesses = ProductThicknesses::where('product_id', $productId)->get();
+        foreach($getAllThicknesses as $pt){
+            if (!in_array($pt->thickness_id, $availableThicknessIds)) {
+                $p = ProductThicknesses::find($pt->id);
+                $p->delete();
+            }
+        }
+
         //Insert/Update Prices
-        $priceCount = 0;
+        /*$priceCount = 0;
         $availablePriceIds = [];
         foreach($request->price as $price){
             if (!empty($priceCount)){
@@ -154,7 +217,9 @@ class ProductsController extends Controller
                 $p = ProductPrices::find($price->id);
                 $p->delete();
             }
-        }
+        }*/
+
+
 
 
         if (!empty(session('temp_product_id'))){

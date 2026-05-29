@@ -28,6 +28,21 @@ class Products extends Model
         return $this->hasOne(ProductImages::class, 'product_id', 'id');
     }
 
+    public function product_thicknesses()
+    {
+        return $this->hasMany(ProductThicknesses::class, 'product_id', 'id');
+    }
+
+    public function product_labels()
+    {
+        return $this->hasMany(ProductLabels::class, 'product_id', 'id');
+    }
+
+    public function product_colors()
+    {
+        return $this->hasMany(ProductColors::class, 'product_id', 'id');
+    }
+
     public function status(){
 
         $status = 'Inactive';

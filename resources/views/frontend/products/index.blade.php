@@ -47,7 +47,7 @@
                                 </figure>
                                 <div class="card-body text-center">
                                 <span class="d-flex align-items-center price text-body-emphasis fw-bold justify-content-center mb-3 fs-6">
-                                    <ins class="text-decoration-none">{{ priceWithCurrency($product->default_price) }}</ins>
+                                    {{--<ins class="text-decoration-none">{{ priceWithCurrency($product->default_price) }}</ins>--}}
                                 </span>
                                     <h4 class="product-title card-title text-primary-hover text-body-emphasis fs-15px fw-500 mb-3">
                                         <a class="text-decoration-none text-reset" href="{{ url('/product/' . $product->slug) }}">{{ $product->product }}</a>

@@ -116,9 +116,9 @@
                                 </select>
                             </div>
                         </div>
-                        <hr>
+                        {{--<hr>
                         <div class="row mb-5">
-                            <div class="col-sm-12 mb-4" id="pricing-area">
+                            --}}{{--<div class="col-sm-12 mb-4" id="pricing-area">
                                 @if(!empty($product))
                                     @php
                                     $priceCount = 0;
@@ -182,8 +182,70 @@
                                         </div>
                                     </div>
                                 @endif
+                            </div>--}}{{--
+                        </div>--}}
+
+                        <hr>
+                        <div class="row mb-5">
+                            <div class="col-sm-12 mb-4" id="thicknesses-area">
+
+                                    <div class="row justify-content-end mb-4">
+                                        <div class="col-sm-12 d-flex justify-content-end align-items-center">
+                                            <a href="javascript:void(0);" class="btn btn-secondary waves-effect waves-light add-new-thickness-row"><i class="mdi mdi-bookmark-plus me-1"></i>Add New Thickness</a>
+                                        </div>
+                                    </div>
+
+                                @if(!empty($product) && !empty($product_thicknesses))
+                                    @foreach($product_thicknesses as $pt)
+                                        <div class="row justify-content-between mb-4">
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="thickness_ids[]">
+                                                    @foreach($thicknesses as $thickness)
+                                                        <option value="{{ $thickness->id }}" {{ $thickness->id == $pt->thickness_id ? 'selected' : '' }}>{{ $thickness->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2 d-flex justify-content-end align-items-end">
+                                                <a href="javascript:void(0);" class="btn btn-danger waves-effect waves-light delete-thickness"><i class="mdi mdi-delete"></i></a>
+                                            </div>
+                                        </div>
+
+                                    @endforeach
+                                @endif
+
                             </div>
                         </div>
+
+                        <hr>
+                        <div class="row mb-5">
+                            <div class="col-sm-12 mb-4" id="labels-area">
+                                <div class="row justify-content-end mb-4">
+                                    <div class="col-sm-12 d-flex justify-content-end align-items-center">
+                                        <a href="javascript:void(0);" class="btn btn-secondary waves-effect waves-light add-new-label-row"><i class="mdi mdi-bookmark-plus me-1"></i>Add New Label</a>
+                                    </div>
+                                </div>
+
+                                @if(!empty($product) && !empty($product_labels))
+                                    @foreach($product_labels as $pl)
+
+                                        <div class="row justify-content-between mb-4">
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="label_ids[]">
+                                                    @foreach($labels as $label)
+                                                        <option value="{{ $label->id }}" {{ $label->id == $pl->label_id ? 'selected' : '' }}>{{ $label->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2 d-flex justify-content-end align-items-end">
+                                                <a href="javascript:void(0);" class="btn btn-danger waves-effect waves-light delete-label"><i class="mdi mdi-delete"></i></a>
+                                            </div>
+                                        </div>
+
+                                    @endforeach
+                                @endif
+                            </div>
+                        </div>
+
                         <hr>
                         <div class="row">
                             <div class="col-sm-12 mb-4">
@@ -341,6 +403,49 @@
 
             $('<div></div>').addClass('col-sm-2 d-flex justify-content-end align-items-end')
                 .append($('<a></a>').attr('href', 'javascript:void(0);').addClass('btn btn-danger waves-effect waves-light delete-price')
+                    .append($('<i></i>').addClass('mdi mdi-delete'))
+                ).appendTo($el);
+
+            return $el;
+        }
+
+        function thicknessRow($item){
+
+            $thicknesses = $('<select></select>').addClass('form-control').attr('name', 'thickness_ids[]');
+            $.each($item.thicknesses, function ($index, $d){
+                $('<option></option>').attr('value', $d.id).text($d.name).appendTo($thicknesses);
+            });
+
+            $el = $('<div></div>').addClass('row justify-content-between mb-4');
+
+            $('<div></div>').addClass('col-sm-10')
+                // .append($('<label></label>').text('Thickness'))
+                .append($thicknesses).appendTo($el);
+
+            $('<div></div>').addClass('col-sm-2 d-flex justify-content-end align-items-end')
+                .append($('<a></a>').attr('href', 'javascript:void(0);').addClass('btn btn-danger waves-effect waves-light delete-thickness')
+                    .append($('<i></i>').addClass('mdi mdi-delete'))
+                ).appendTo($el);
+
+            return $el;
+        }
+
+        function labelRow($item){
+
+            $labels = $('<select></select>').addClass('form-control').attr('name', 'label_ids[]');
+            $.each($item.labels, function ($index, $d){
+                $('<option></option>').attr('value', $d.id).text($d.name).appendTo($labels);
+            });
+
+
+            $el = $('<div></div>').addClass('row justify-content-between mb-4');
+
+            $('<div></div>').addClass('col-sm-10')
+                // .append($('<label></label>').text('Label'))
+                .append($labels).appendTo($el);
+
+            $('<div></div>').addClass('col-sm-2 d-flex justify-content-end align-items-end')
+                .append($('<a></a>').attr('href', 'javascript:void(0);').addClass('btn btn-danger waves-effect waves-light delete-label')
                     .append($('<i></i>').addClass('mdi mdi-delete'))
                 ).appendTo($el);
 
@@ -643,6 +748,130 @@
 
                         setTimeout(function() {
                             Swal.fire('Done!', 'Price has been deleted!', 'success');
+
+                            $($this).parent().parent().fadeOut('slow');
+                            setTimeout(function (){
+                                $($this).parent().parent().remove();
+                            },1000);
+
+                        }, 50);
+                    }
+                });
+
+            });
+
+
+            $('.add-new-thickness-row').on('click', function ($e){
+                $.ajax({
+                    url: "{{ route('backend.products.getDetailsForPriceRow') }}",
+                    type: 'POST',
+                    data: {
+                        _token: csrf_token()
+                    },
+                    dataType: 'json',
+                    beforeSend: function ($jqXHR, $obj) {
+                        Swal.fire({
+                            title: "Processing...",
+                            text: "Please wait",
+                            imageUrl: "{{ asset('assets/common/images/ajax-loader.gif') }}",
+                            showConfirmButton: false,
+                            allowOutsideClick: false
+                        });
+                    },
+                    success: function ($response, $textStatus, $jqXHR) {
+                        Swal.close();
+                        $row = thicknessRow($response);
+                        $('#thicknesses-area').append($row);
+                    },
+                    error: function ($jqXHR, $textStatus, $errorThrown) {
+                        Swal.fire('Oops...', 'Something went wrong with the System!', 'error');
+                    }
+                });
+            });
+
+            $('.add-new-label-row').on('click', function ($e){
+                $.ajax({
+                    url: "{{ route('backend.products.getDetailsForPriceRow') }}",
+                    type: 'POST',
+                    data: {
+                        _token: csrf_token()
+                    },
+                    dataType: 'json',
+                    beforeSend: function ($jqXHR, $obj) {
+                        Swal.fire({
+                            title: "Processing...",
+                            text: "Please wait",
+                            imageUrl: "{{ asset('assets/common/images/ajax-loader.gif') }}",
+                            showConfirmButton: false,
+                            allowOutsideClick: false
+                        });
+                    },
+                    success: function ($response, $textStatus, $jqXHR) {
+                        Swal.close();
+                        $row = labelRow($response);
+                        $('#labels-area').append($row);
+                    },
+                    error: function ($jqXHR, $textStatus, $errorThrown) {
+                        Swal.fire('Oops...', 'Something went wrong with the System!', 'error');
+                    }
+                });
+            });
+
+            $('#thicknesses-area').on('click', '.delete-thickness', function ($e){
+                $e.preventDefault();
+                $this = $(this);
+                $id = $($this).data('id');
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You want to delete this!",
+                    icon: "warning",
+                    showCancelButton: !0,
+                    showLoaderOnConfirm: true,
+                    confirmButtonText: "Yes, Do it!",
+                    cancelButtonText: "No, cancel!",
+                    confirmButtonClass: "btn btn-primary w-xs me-2 mt-2",
+                    cancelButtonClass: "btn btn-danger w-xs mt-2",
+                    buttonsStyling: !1,
+                    showCloseButton: !0,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+
+                        setTimeout(function() {
+                            Swal.fire('Done!', 'Thickness has been deleted!', 'success');
+
+                            $($this).parent().parent().fadeOut('slow');
+                            setTimeout(function (){
+                                $($this).parent().parent().remove();
+                            },1000);
+
+                        }, 50);
+                    }
+                });
+
+            });
+            $('#labels-area').on('click', '.delete-label', function ($e){
+                $e.preventDefault();
+                $this = $(this);
+                $id = $($this).data('id');
+
+                Swal.fire({
+                    title: "Are you sure?",
+                    text: "You want to delete this!",
+                    icon: "warning",
+                    showCancelButton: !0,
+                    showLoaderOnConfirm: true,
+                    confirmButtonText: "Yes, Do it!",
+                    cancelButtonText: "No, cancel!",
+                    confirmButtonClass: "btn btn-primary w-xs me-2 mt-2",
+                    cancelButtonClass: "btn btn-danger w-xs mt-2",
+                    buttonsStyling: !1,
+                    showCloseButton: !0,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+
+                        setTimeout(function() {
+                            Swal.fire('Done!', 'Label has been deleted!', 'success');
 
                             $($this).parent().parent().fadeOut('slow');
                             setTimeout(function (){

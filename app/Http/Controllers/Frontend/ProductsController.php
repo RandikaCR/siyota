@@ -70,7 +70,18 @@ class ProductsController extends Controller
                 'images' => function ($query) {
                     return $query->select('product_images.*')
                         ->orderBy('product_images.is_primary', 'DESC');
-                }
+                },
+                'product_thicknesses' => function ($query) {
+                    return $query->select('product_thicknesses.*', 'thicknesses.name')
+                        ->join('thicknesses', 'product_thicknesses.thickness_id', 'thicknesses.id');
+                },
+                'product_labels' => function ($query) {
+                    return $query->select('product_labels.*', 'labels.name')
+                        ->join('labels', 'product_labels.label_id', 'labels.id');
+                },
+                'product_colors' => function ($query) {
+                    return $query->select('product_colors.*');
+                },
             ])
             ->when(!empty($keyword), function ($query) use ($keyword) {
                 return $query->where('products.product', 'like', "%$keyword%")

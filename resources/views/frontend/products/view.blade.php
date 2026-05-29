@@ -37,13 +37,13 @@
                 </div>
             </div>
             <div class="col-md-6 pt-md-0 pt-10">
-                <p class="d-flex align-items-center mb-6">
+                {{--<p class="d-flex align-items-center mb-6">
                     <span class="fs-18px text-body-emphasis ps-6 fw-bold" id="price-area">{{ priceWithCurrency($product->default_price) }}</span>
-                </p>
+                </p>--}}
                 <h1 class="mb-4 pb-2 fs-4">{{ $product->product }}</h1>
 
 
-                <form>
+                {{--<form>
                     <div class="row align-items-end">
                         <div class="col-sm-6 form-group">
                             <label class="text-body-emphasis fw-semibold py-5" for="size">Select a Thickness: </label>
@@ -69,7 +69,51 @@
                             </a>
                         </div>
                     </div>
-                </form>
+                </form>--}}
+                @if(!$product->product_colors->isEmpty())
+                <div class="row mb-10">
+                    <div class="col-sm-12 form-group">
+                        <label class="text-body-emphasis fw-semibold py-5" for="quantity">Available Colours: </label>
+                        <div class="row">
+                            @foreach($product->product_colors as $pc)
+                                <div class="col-auto mb-4">
+                                    <div class="d-flex flex-column align-items-center">
+                                        <div class="color-box" style="background: {{ $pc->code }};"></div>
+                                        <span class="color-box-title">{{ $pc->color }}</span>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                        </div>
+                    </div>
+                </div>
+                @endif
+
+                <div class="row mt-10">
+
+                    @if(!$product->product_thicknesses->isEmpty())
+                        <div class="col-sm-6 form-group">
+                            {{--<label class="text-body-emphasis fw-semibold py-5" for="size">Thicknesses: </label>--}}
+                            <ul>
+                                @foreach($product->product_thicknesses as $th)
+                                    <li>{{ $th->name }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    @if(!$product->product_labels->isEmpty())
+                    <div class="col-sm-6 form-group">
+                        {{--<label class="text-body-emphasis fw-semibold py-5" for="quantity">Labels: </label>--}}
+                        <ul>
+                            @foreach($product->product_labels as $lb)
+                                <li>{{ $lb->name }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+
+                </div>
 
 
                 @if(!empty(strip_tags($product->description)))
@@ -104,9 +148,9 @@
                             <a href="{{ url('/product/' . $rel->slug) }}" class="btn btn-add-to-cart btn-dark btn-hover-bg-primary btn-hover-border-primary position-absolute z-index-2 text-nowrap">View</a>
                         </figure>
                         <div class="card-body text-center p-0">
-                            <span class="d-flex align-items-center price text-body-emphasis fw-bold justify-content-center mb-3 fs-6">
+                            {{--<span class="d-flex align-items-center price text-body-emphasis fw-bold justify-content-center mb-3 fs-6">
                                 <ins class="text-decoration-none">{{ priceWithCurrency($rel->default_price) }}</ins>
-                            </span>
+                            </span>--}}
 
                             <h4 class="product-title card-title text-primary-hover text-body-emphasis fs-15px fw-500 mb-3"><a class="text-decoration-none text-reset" href="{{ url('/product/' . $rel->slug) }}">{{ $rel->product }}</a></h4>
                         </div>

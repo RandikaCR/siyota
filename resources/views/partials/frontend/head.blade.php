@@ -48,6 +48,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.8.3/css/lightgallery.min.css" integrity="sha512-QMCloGTsG2vNSnHcsxYTapI6pFQNnUP6yNizuLL5Wh3ha6AraI6HrJ3ABBaw6SIUHqlSTPQDs/SydiR98oTeaQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <style type="text/css">
+
+    .color-box{
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+    }
+    .color-box-title{
+        font-size: 13px;
+
+    }
+
     .features__shape img {
         position: absolute;
     }
