@@ -43,8 +43,8 @@ class ProductsController extends Controller
             ->when(!empty($categoryId), function ($query) use ($categoryId) {
                 return $query->where('products.product_category_id', $categoryId);
             })
-            ->where('product_prices.thickness_id', 0)
-            ->where('product_prices.label_id', 0)
+            //->where('product_prices.thickness_id', 0)
+            //->where('product_prices.label_id', 0)
             ->orderBy('products.id', 'DESC')
             ->groupBy('products.id')
             ->paginate(18)
@@ -106,8 +106,8 @@ class ProductsController extends Controller
             ->leftJoin('product_images', 'products.id', 'product_images.product_id')
             ->leftJoin('product_prices', 'products.id', 'product_prices.product_id')
             ->where('products.id', '!=', $product->id)
-            ->where('product_prices.thickness_id', 0)
-            ->where('product_prices.label_id', 0)
+            //->where('product_prices.thickness_id', 0)
+            //->where('product_prices.label_id', 0)
             ->orderBy('products.id', 'DESC')
             ->groupBy('products.id')
             ->take(6)
