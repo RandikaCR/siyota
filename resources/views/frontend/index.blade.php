@@ -170,7 +170,7 @@
                             <p class="fs-23px mb-5 font-bebas text-uppercase new-theme-secondary">Concrete Products</p>
                         </div>
                         <div class="mb-13 pb-3 text-center" data-animate="fadeInUp">
-                            <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/services-2.jpg') }}">
+                            <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/services-4.jpg') }}">
                         </div>
                     </a>
                     <a href="{{ url('/product-categories') }}" class=" btn btn-dark text-uppercase btn-hover-bg-primary btn-hover-border-primary px-11"  data-animate="fadeInUp">Explore Now</a>
