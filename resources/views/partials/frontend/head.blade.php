@@ -105,4 +105,10 @@
         50% { transform: rotate(10deg); }
         100% { transform: translateY(-4px); }
     }
+
+    @media (max-width: 1199px) {
+        .navbar-brand-logo{
+            width: 30px !important;
+        }
+    }
 </style>

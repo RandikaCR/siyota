@@ -78,6 +78,24 @@
                 </div>
             </div>
 
+
+            <div class="vh-100 d-flex align-items-center">
+                <div class="z-index-2 container container-xxl py-21 pt-xl-10 pb-xl-11">
+
+                    <div class="hero-content text-start">
+                        <div data-animate="fadeInDown">
+                            <p class="text-body-emphasis mb-0 text-uppercase fw-semibold fs-18px new-theme-secondary">Built for Productivity</p>
+                            <h1 class="mb-0 hero-title font-bebas new-theme-purple">HEAVY MACHINERY</h1>
+                            <p class="hero-desc text-body-calculate fs-23px mb-11 new-theme-secondary">Flexible hire solutions with expert operators.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lazy-bg bg-overlay position-absolute z-index-1 w-100 h-100   light-mode-img" data-bg-src="{{ asset('assets/common/images/uploads/banner-5.jpg') }}">
+                </div>
+                <div class="lazy-bg bg-overlay dark-mode-img position-absolute z-index-1 w-100 h-100" data-bg-src="{{ asset('assets/common/images/uploads/banner-5.jpg') }}">
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -153,7 +171,7 @@
                 </div>
             </div>
             <div class="row justify-content-around">
-                <div class="col-sm-5 pb-16">
+                <div class="col-sm-4 pb-16 text-center">
                     <a href="{{ url('/landscapes') }}">
                         <div class="mb-2 pb-3 text-center" data-animate="fadeInUp">
                             <p class="fs-23px mb-5 font-bebas text-uppercase new-theme-secondary">Landscape Design</p>
@@ -164,7 +182,7 @@
                     </a>
                     <a href="{{ url('/landscapes') }}" class=" btn btn-dark text-uppercase btn-hover-bg-primary btn-hover-border-primary px-11"  data-animate="fadeInUp">Explore Now</a>
                 </div>
-                <div class="col-sm-5 pb-16">
+                <div class="col-sm-4 pb-16 text-center">
                     <a href="{{ url('/product-categories') }}">
                         <div class="mb-2 pb-3 text-center" data-animate="fadeInUp">
                             <p class="fs-23px mb-5 font-bebas text-uppercase new-theme-secondary">Concrete Products</p>
@@ -174,6 +192,17 @@
                         </div>
                     </a>
                     <a href="{{ url('/product-categories') }}" class=" btn btn-dark text-uppercase btn-hover-bg-primary btn-hover-border-primary px-11"  data-animate="fadeInUp">Explore Now</a>
+                </div>
+                <div class="col-sm-4 pb-16 text-center">
+                    <a href="{{ url('/machinery-hire') }}">
+                        <div class="mb-2 pb-3 text-center" data-animate="fadeInUp">
+                            <p class="fs-23px mb-5 font-bebas text-uppercase new-theme-secondary">Machinery Hire</p>
+                        </div>
+                        <div class="mb-13 pb-3 text-center" data-animate="fadeInUp">
+                            <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/services-5.jpg') }}">
+                        </div>
+                    </a>
+                    <a href="{{ url('/machinery-hire') }}" class=" btn btn-dark text-uppercase btn-hover-bg-primary btn-hover-border-primary px-11"  data-animate="fadeInUp">Explore Now</a>
                 </div>
             </div>
 

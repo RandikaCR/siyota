@@ -40,6 +40,10 @@
                 </li>
                 <li class="nav-item transition-all-xl-1 py-0">
                     <a class="nav-link d-flex justify-content-between position-relative text-uppercase fw-semibold ls-1 fs-15px"
+                       href="{{ url('/machinery-hire') }}">Machinery Hire</a>
+                </li>
+                <li class="nav-item transition-all-xl-1 py-0">
+                    <a class="nav-link d-flex justify-content-between position-relative text-uppercase fw-semibold ls-1 fs-15px"
                        href="{{ url('/services') }}">Our Services</a>
                 </li>
                 <li class="nav-item transition-all-xl-1 py-0">

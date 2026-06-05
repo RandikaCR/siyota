@@ -68,6 +68,12 @@
                     </div>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{ url('/admin/machinery-hires') }}">
+                        <i class="mdi mdi-truck-plus"></i> <span data-key="t-machinery-hires">Machinery Hires</span>
+                    </a>
+                </li>
+
                 <li class="menu-title"><span data-key="t-system">System</span></li>
 
                 <li class="nav-item">

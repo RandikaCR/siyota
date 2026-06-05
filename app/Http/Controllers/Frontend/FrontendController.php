@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\MachineryHires;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Landscapes;
@@ -44,6 +45,15 @@ class FrontendController extends Controller
 
         return view('frontend.landscapes', [
             'landscapes' => $landscapes
+        ]);
+    }
+
+    public function machineryHire(Request $request)
+    {
+        $machinery = MachineryHires::find(1);
+
+        return view('frontend.machinery-hire', [
+            'machinery' => $machinery
         ]);
     }
 

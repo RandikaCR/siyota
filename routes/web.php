@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\ProductLabelsController AS BackendProductLabels
 use App\Http\Controllers\Backend\ProductThicknessesController AS BackendProductThicknesses;
 use App\Http\Controllers\Backend\ProductCategoriesController AS BackendProductCategories;
 use App\Http\Controllers\Backend\LandscapesController AS BackendLandscapes;
+use App\Http\Controllers\Backend\MachineryHiresController AS BackendMachineryHires;
 
 //FRONTEND CONTROLLERS
 use App\Http\Controllers\Frontend\FrontendController AS Frontend;
@@ -24,6 +25,7 @@ Route::group([ 'prefix' =>'/'], function () {
     Route::get('/services', [Frontend::class, 'services'])->name('frontend.services');
     Route::get('/gallery', [Frontend::class, 'gallery'])->name('frontend.gallery');
     Route::get('/landscapes', [Frontend::class, 'landscapes'])->name('frontend.landscapes');
+    Route::get('/machinery-hire', [Frontend::class, 'machineryHire'])->name('frontend.machinery-hire');
 
     Route::get('/product-categories', [FrontendProducts::class, 'index'])->name('frontend.products.index');
     Route::get('/product-categories/{slug}', [FrontendProducts::class, 'index'])->name('frontend.products.indexWithCategory');
@@ -53,6 +55,11 @@ Route::middleware('auth')->group(function () {
         Route::post('/landscapes/delete', [BackendLandscapes::class, 'delete'])->name('backend.landscapes.delete');
         Route::post('/landscapes/upload-image', [BackendLandscapes::class, 'imageUpload'])->name('backend.landscapes.imageUpload');
         Route::post('/landscapes/status', [BackendLandscapes::class, 'status'])->name('backend.landscapes.status');
+
+        // M
+        Route::get('/machinery-hires', [BackendMachineryHires::class, 'index'])->name('backend.machineryHires.index');
+        Route::post('/machinery-hires/store', [BackendMachineryHires::class, 'store'])->name('backend.machineryHires.store');
+
 
         // P
         Route::get('/products', [BackendProducts::class, 'index'])->name('backend.products.index');
