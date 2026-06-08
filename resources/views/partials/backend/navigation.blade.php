@@ -74,6 +74,23 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#sidebarMachineries" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarMachineries">
+                        <i class="mdi mdi-truck-plus"></i> <span data-key="t-raffles-main">Machineries</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarMachineries">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ url('/admin/machineries') }}" class="nav-link" data-key="t-machineries">All Machineries</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('/admin/machineries/create') }}" class="nav-link" data-key="t-machineries-add">Add New</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+
                 <li class="menu-title"><span data-key="t-system">System</span></li>
 
                 <li class="nav-item">
@@ -85,6 +102,12 @@
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="{{ url('/admin/product-categories') }}">
                         <i class="mdi mdi-store-settings"></i> <span data-key="t-product-categories">Product Categories</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{ url('/admin/machinery-categories') }}">
+                        <i class="mdi mdi-store-settings"></i> <span data-key="t-machinery-categories">Machinery Categories</span>
                     </a>
                 </li>
 

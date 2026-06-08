@@ -11,6 +11,8 @@ use App\Http\Controllers\Backend\ProductThicknessesController AS BackendProductT
 use App\Http\Controllers\Backend\ProductCategoriesController AS BackendProductCategories;
 use App\Http\Controllers\Backend\LandscapesController AS BackendLandscapes;
 use App\Http\Controllers\Backend\MachineryHiresController AS BackendMachineryHires;
+use App\Http\Controllers\Backend\MachineriesController AS BackendMachineries;
+use App\Http\Controllers\Backend\MachineryCategoriesController AS BackendMachineryCategories;
 
 //FRONTEND CONTROLLERS
 use App\Http\Controllers\Frontend\FrontendController AS Frontend;
@@ -60,6 +62,24 @@ Route::middleware('auth')->group(function () {
         Route::get('/machinery-hires', [BackendMachineryHires::class, 'index'])->name('backend.machineryHires.index');
         Route::post('/machinery-hires/store', [BackendMachineryHires::class, 'store'])->name('backend.machineryHires.store');
 
+        Route::get('/machineries', [BackendMachineries::class, 'index'])->name('backend.machineries.index');
+        Route::get('/machineries/create', [BackendMachineries::class, 'create'])->name('backend.machineries.create');
+        Route::get('/machineries/edit/{slug}', [BackendMachineries::class, 'edit'])->name('backend.machineries.edit');
+        Route::post('/machineries/store', [BackendMachineries::class, 'store'])->name('backend.machineries.store');
+        Route::post('/machineries/delete', [BackendMachineries::class, 'delete'])->name('backend.machineries.delete');
+        Route::post('/machineries/slug-generator', [BackendMachineries::class, 'slugGenerator'])->name('backend.machineries.slugGenerator');
+        Route::post('/machineries/upload-image', [BackendMachineries::class, 'imageUpload'])->name('backend.machineries.imageUpload');
+        Route::post('/machineries/set-primary-image', [BackendMachineries::class, 'setPrimaryImage'])->name('backend.machineries.setPrimaryImage');
+        Route::post('/machineries/image-delete', [BackendMachineries::class, 'deleteImage'])->name('backend.machineries.deleteImage');
+        Route::post('/machineries/status', [BackendMachineries::class, 'status'])->name('backend.machineries.status');
+        Route::post('/machineries/get-details-for-price', [BackendMachineries::class, 'getDetailsForPriceRow'])->name('backend.machineries.getDetailsForPriceRow');
+
+
+        Route::get('/machinery-categories', [BackendMachineryCategories::class, 'index'])->name('backend.machineryCategories.index');
+        Route::post('/machinery-categories/store', [BackendMachineryCategories::class, 'store'])->name('backend.machineryCategories.store');
+        Route::post('/machinery-categories/get', [BackendMachineryCategories::class, 'get'])->name('backend.machineryCategories.get');
+        Route::post('/machinery-categories/status', [BackendMachineryCategories::class, 'status'])->name('backend.machineryCategories.status');
+        Route::post('/machinery-categories/slug-generator', [BackendMachineryCategories::class, 'slugGenerator'])->name('backend.machineryCategories.slugGenerator');
 
         // P
         Route::get('/products', [BackendProducts::class, 'index'])->name('backend.products.index');
@@ -73,7 +93,6 @@ Route::middleware('auth')->group(function () {
         Route::post('/products/image-delete', [BackendProducts::class, 'deleteImage'])->name('backend.products.deleteImage');
         Route::post('/products/status', [BackendProducts::class, 'status'])->name('backend.products.status');
         Route::post('/products/get-details-for-price', [BackendProducts::class, 'getDetailsForPriceRow'])->name('backend.products.getDetailsForPriceRow');
-
 
         Route::get('/labels', [BackendProductLabels::class, 'index'])->name('backend.labels.index');
         Route::post('/labels/store', [BackendProductLabels::class, 'store'])->name('backend.labels.store');

@@ -34,6 +34,7 @@ class ProductsController extends Controller
             'product_images.image AS primary_image',
             'product_prices.price AS default_price',
         )
+            ->join('product_categories', 'products.product_category_id', 'product_categories.id')
             ->leftJoin('product_images', 'products.id', 'product_images.product_id')
             ->leftJoin('product_prices', 'products.id', 'product_prices.product_id')
             ->when(!empty($keyword), function ($query) use ($keyword) {
@@ -45,6 +46,7 @@ class ProductsController extends Controller
             })
             //->where('product_prices.thickness_id', 0)
             //->where('product_prices.label_id', 0)
+            ->orderBy('product_categories.display_order', 'ASC')
             ->orderBy('products.id', 'DESC')
             ->groupBy('products.id')
             ->paginate(18)

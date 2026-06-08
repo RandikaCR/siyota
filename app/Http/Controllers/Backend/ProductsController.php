@@ -142,7 +142,7 @@ class ProductsController extends Controller
         $getAllLabels = ProductLabels::where('product_id', $productId)->get();
         foreach($getAllLabels as $pl){
             if (!in_array($pl->label_id, $availableLabelIds)) {
-                $p = ProductPrices::find($pl->id);
+                $p = ProductLabels::find($pl->id);
                 $p->delete();
             }
         }
