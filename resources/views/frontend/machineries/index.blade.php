@@ -32,6 +32,24 @@
 
     <div class="container container-xxl pb-16 pb-lg-18">
 
+        <div class="row justify-content-center pb-20">
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="mb-2 pb-3" data-animate="fadeInUp">
+                            <h2 class="fs-56px mb-5 new-theme-purple font-bebas">{{ $machinery_hire->title }}</h2>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="mb-2 pb-3" data-animate="fadeInUp">
+                            <p class="fs-18px">{!! $machinery_hire->content !!}</p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-lg-12 order-lg-1">
                 <div class="row gy-11">

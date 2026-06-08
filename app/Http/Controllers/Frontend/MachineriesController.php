@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Labels;
 use App\Models\Machineries;
 use App\Models\MachineryCategories;
+use App\Models\MachineryHires;
 use Illuminate\Http\Request;
 
 class MachineriesController extends Controller
@@ -45,9 +46,12 @@ class MachineriesController extends Controller
             ->paginate(18)
             ->withQueryString();
 
+        $machineryHire = MachineryHires::find(1);
+
         return view('frontend.machineries.index', [
             'title' => $title,
             'machineries' => $machineries,
+            'machinery_hire' => $machineryHire,
         ]);
     }
 

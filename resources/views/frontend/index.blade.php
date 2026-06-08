@@ -194,7 +194,7 @@
                     <a href="{{ url('/product-categories') }}" class=" btn btn-dark text-uppercase btn-hover-bg-primary btn-hover-border-primary px-11"  data-animate="fadeInUp">Explore Now</a>
                 </div>
                 <div class="col-sm-4 pb-16 text-center">
-                    <a href="{{ url('/machinery-hire') }}">
+                    <a href="{{ url('/machineries') }}">
                         <div class="mb-2 pb-3 text-center" data-animate="fadeInUp">
                             <p class="fs-23px mb-5 font-bebas text-uppercase new-theme-secondary">Machinery Hire</p>
                         </div>
@@ -202,7 +202,7 @@
                             <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/services-5.jpg') }}">
                         </div>
                     </a>
-                    <a href="{{ url('/machinery-hire') }}" class=" btn btn-dark text-uppercase btn-hover-bg-primary btn-hover-border-primary px-11"  data-animate="fadeInUp">Explore Now</a>
+                    <a href="{{ url('/machineries') }}" class=" btn btn-dark text-uppercase btn-hover-bg-primary btn-hover-border-primary px-11"  data-animate="fadeInUp">Explore Now</a>
                 </div>
             </div>
 
