@@ -46,6 +46,7 @@ class ProductsController extends Controller
             })
             //->where('product_prices.thickness_id', 0)
             //->where('product_prices.label_id', 0)
+            ->orderBy('products.display_order', 'ASC')
             ->orderBy('product_categories.display_order', 'ASC')
             ->orderBy('products.id', 'DESC')
             ->groupBy('products.id')

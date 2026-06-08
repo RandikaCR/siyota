@@ -115,6 +115,7 @@ class ProductsController extends Controller
         $save->product_category_id = !empty($request->product_category_id) ? $request->product_category_id : 0;
         $save->product = !empty($request->product) ? $request->product : null;
         $save->description = !empty($request->description) ? $request->description : null;
+        $save->display_order = !empty($request->display_order) ? $request->display_order : 0;
         $save->save();
 
         $productId = $save->id;

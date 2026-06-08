@@ -107,13 +107,17 @@
                     </div>
                     <div class="card-body">
                         <div class="row mb-2">
-                            <div class="col-sm-12">
+                            <div class="col-sm-8">
                                 <label>Category</label>
                                 <select class="form-control" name="product_category_id">
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}" {{ (!empty($product) && $product->product_category_id == $category->id) ? 'selected' : '' }}>{{ $category->product_category }}</option>
                                     @endforeach
                                 </select>
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Display Order</label>
+                                <input class="form-control" type="text" name="display_order" placeholder="Enter here...." value="{{ isset($product) ? $product->display_order : '' }}">
                             </div>
                         </div>
                         {{--<hr>

@@ -103,6 +103,7 @@ class MachineriesController extends Controller
         $save->machinery_category_id = !empty($request->machinery_category_id) ? $request->machinery_category_id : 0;
         $save->machinery = !empty($request->machinery) ? $request->machinery : null;
         $save->description = !empty($request->description) ? $request->description : null;
+        $save->display_order = !empty($request->display_order) ? $request->display_order : 0;
         $save->save();
 
         $machineryId = $save->id;
