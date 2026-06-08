@@ -106,6 +106,9 @@
                                                 <p class="mb-0">Category</p>
                                             </th>
                                             <th class="text-center" scope="col">
+                                                <p class="mb-0">Display Order</p>
+                                            </th>
+                                            <th class="text-center" scope="col">
                                                 <p class="mb-0">Status</p>
                                             </th>
                                             <th class="text-end" scope="col">
@@ -129,6 +132,9 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <p class="mb-0">{{ $machinery->machinery_categories->machinery_category }}</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <p class="mb-0">{{ $machinery->display_order }}</p>
                                                 </td>
                                                 <td class="text-center">
                                                     <p class="mb-0"><span class="badge {{ $machinery->status()->class }}">{{ $machinery->status()->text }}</span></p>

@@ -106,6 +106,9 @@
                                                 <p class="mb-0">Category</p>
                                             </th>
                                             <th class="text-center" scope="col">
+                                                <p class="mb-0">Display Order</p>
+                                            </th>
+                                            <th class="text-center" scope="col">
                                                 <p class="mb-0">Status</p>
                                             </th>
                                             <th class="text-end" scope="col">
@@ -129,6 +132,9 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <p class="mb-0">{{ $product->product_category->product_category }}</p>
+                                                </td>
+                                                <td class="text-center">
+                                                    <p class="mb-0">{{ $product->display_order }}</p>
                                                 </td>
                                                 <td class="text-center">
                                                     <p class="mb-0"><span class="badge {{ $product->status()->class }}">{{ $product->status()->text }}</span></p>
