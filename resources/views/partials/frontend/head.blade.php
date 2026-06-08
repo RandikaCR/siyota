@@ -10,8 +10,7 @@
     $metaTitle = !empty($metaTitle) ? $metaTitle : 'Siyota (Pvt) Ltd. Official Website';
     $metaDescription = !empty($metaDescription) ? $metaDescription : '';
     $metaKeywords = !empty($metaKeywords) ? $metaKeywords : '';
-    //$metaImage = !empty($metaImage) ? $metaImage : asset('assets/common/images/meta-image.jpg');
-    $metaImage = '';
+    $metaImage = !empty($metaImage) ? $metaImage : asset('assets/common/images/meta-image.jpg');
     $metaUrl = !empty($metaUrl) ? $metaUrl : url('');
 @endphp
 
