@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\MachineryCategoriesController AS BackendMachine
 
 //FRONTEND CONTROLLERS
 use App\Http\Controllers\Frontend\FrontendController AS Frontend;
+use App\Http\Controllers\Frontend\MachineriesController AS FrontendMachineries;
 use App\Http\Controllers\Frontend\ProductsController AS FrontendProducts;
 
 //1 - Frontend Routes
@@ -27,7 +28,13 @@ Route::group([ 'prefix' =>'/'], function () {
     Route::get('/services', [Frontend::class, 'services'])->name('frontend.services');
     Route::get('/gallery', [Frontend::class, 'gallery'])->name('frontend.gallery');
     Route::get('/landscapes', [Frontend::class, 'landscapes'])->name('frontend.landscapes');
-    Route::get('/machinery-hire', [Frontend::class, 'machineryHire'])->name('frontend.machinery-hire');
+    //Route::get('/machinery-hire', [Frontend::class, 'machineryHire'])->name('frontend.machinery-hire');
+
+    Route::get('/machinery-categories', [FrontendMachineries::class, 'index'])->name('frontend.machineries.index');
+    Route::get('/machinery-categories/{slug}', [FrontendMachineries::class, 'index'])->name('frontend.machineries.indexWithCategory');
+    Route::get('/machineries', [FrontendMachineries::class, 'index'])->name('frontend.machineries.index');
+    Route::get('/machinery/{slug}', [FrontendMachineries::class, 'view'])->name('frontend.machineries.view');
+    Route::post('/machinery/get-pricing-details', [FrontendMachineries::class, 'getPricingDetails'])->name('frontend.machineries.getPricingDetails');
 
     Route::get('/product-categories', [FrontendProducts::class, 'index'])->name('frontend.products.index');
     Route::get('/product-categories/{slug}', [FrontendProducts::class, 'index'])->name('frontend.products.indexWithCategory');

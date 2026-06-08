@@ -48,8 +48,8 @@
                         <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 {{ (request()->segment(1) == 'landscapes') ? 'active' : '' }}">
                             <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px" href="{{ url('/landscapes') }}">Landscapes</a>
                         </li>
-                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 {{ (request()->segment(1) == 'machinery-hire') ? 'active' : '' }}">
-                            <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px" href="{{ url('/machinery-hire') }}">Machinery Hire</a>
+                        <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 {{ (request()->segment(1) == 'machineries') ? 'active' : '' }}">
+                            <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px" href="{{ url('/machineries') }}">Machinery Hire</a>
                         </li>
                         <li class="nav-item transition-all-xl-1 py-xl-11 py-0 me-xxl-12 me-xl-10 {{ (request()->segment(1) == 'services') ? 'active' : '' }}">
                             <a class="nav-link d-flex justify-content-between position-relative py-xl-0 px-xl-0 text-uppercase fw-semibold ls-1 fs-15px fs-xl-14px" href="{{ url('/services') }}">Our Services</a>
