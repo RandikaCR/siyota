@@ -92,12 +92,12 @@
                         <h2 class="mb-0 new-theme-purple font-bebas">Our Team</h2>
                         <p class="fs-23px mb-5 font-bebas text-uppercase new-theme-secondary">Leadership That Drives Excellence</p>
                     </div>
-                    <div class="mb-13 pb-3 text-center" data-animate="fadeInUp">
+                    {{--<div class="mb-13 pb-3 text-center" data-animate="fadeInUp">
                         <p class="mb-5 new-theme-secondary">SIYOTA is led by a hands-on management team that values discipline, quality, and customer satisfaction.</p>
-                    </div>
+                    </div>--}}
                 </div>
                 <div class="col-sm-8">
-                    <div class="row">
+                    {{--<div class="row">
                         <div class="col-sm-4 mb-15 text-center" data-animate="fadeInUp">
                             <img class="img-fluid" src="{{ asset('assets/common/images/uploads/about-person-1.png') }}">
                             <h5 class="new-theme-purple mt-10 mb-0" data-animate="fadeInUp">Chief Executive Officer</h5>
@@ -114,7 +114,7 @@
                             <p class="new-theme-secondary" data-animate="fadeInUp">Mr. Suwantha Kithsilu</p>
                         </div>
 
-                    </div>
+                    </div>--}}
                     <div class="row">
                         <div class="col-sm-12 mt-5 mb-40" data-animate="fadeInUp">
                             <img class="img-fluid theme-border-radius theme-drop-shadow" src="{{ asset('assets/common/images/uploads/about-team.jpg') }}">
