@@ -40,7 +40,10 @@
                     <li class="pt-3 mb-4">
                         <a href="mailto:siyotaenterprises@gmail.com" class="text-body">siyotaenterprises@gmail.com</a>
                     </li>
-                    <li class="pt-3 mb-4">
+                    <li class="pt-3 mb-1">
+                        <a href="tel:+0452275392" class="text-body">045 227 5392</a>
+                    </li>
+                    <li class="pt-1 mb-4">
                         <a href="tel:+94768781126" class="text-body">076 878 1126</a>
                     </li>
                     <li class="pt-3 mb-4">

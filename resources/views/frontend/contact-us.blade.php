@@ -68,6 +68,7 @@
                             <br><span class="ms-7">Pelmadulla</span>
                         </p>
                         <p class="fs-6 new-theme-secondary"><i class="fa fa-envelope new-theme-purple pe-4"></i> siyotaenterprises@gmail.com</p>
+                        <p class="fs-6 fw-bold new-theme-secondary mb-1"><i class="fa fa-phone new-theme-purple pe-4"></i> 045 227 5392</p>
                         <p class="fs-6 fw-bold new-theme-secondary"><i class="fa fa-phone new-theme-purple pe-4"></i> 076 878 1126</p>
                     </div>
                 </div>
